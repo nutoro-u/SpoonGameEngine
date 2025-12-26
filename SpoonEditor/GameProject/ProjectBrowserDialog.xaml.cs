@@ -21,5 +21,27 @@ namespace SpoonEditor.GameProject
 		{
 			InitializeComponent();
 		}
+
+		private void OnToggleButtonClick(object sender, RoutedEventArgs e)
+		{
+			if (sender == OpenProjectButton)
+			{
+				if (NewProjectButton.IsChecked == true)
+				{
+					NewProjectButton.IsChecked = false;
+					BrowserContent.Margin = new Thickness(0);
+				}
+				OpenProjectButton.IsChecked = true;
+			}
+			else // new project button is clicked
+			{
+				if (OpenProjectButton.IsChecked == true)
+				{
+					OpenProjectButton.IsChecked = false;
+					BrowserContent.Margin = new Thickness(-800, 0, 0, 0);
+				}
+				NewProjectButton.IsChecked = true;
+			}
+		}
 	}
 }

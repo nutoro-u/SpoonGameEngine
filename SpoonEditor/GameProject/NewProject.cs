@@ -1,6 +1,7 @@
 ﻿using SpoonEditor.Utils;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -19,6 +20,12 @@ namespace SpoonEditor.GameProject
 		
 		[DataMember]
 		public List<string> Folders { get; set; }
+
+		public byte[] Icon { get; set; }
+		public byte[] Screenshot { get; set; }
+		public string IconFilepath { get; set; }
+		public string ScreenshotFilepath { get; set; }
+		public string ProjectFilePath { get; set; }
 	}
 
 	class NewProject : ViewModelBase
@@ -26,51 +33,125 @@ namespace SpoonEditor.GameProject
 		// TODO get the path from the installation location
 		private string _templatesPath = @"..\..\SpoonEditor\ProjectTemplates";
 
-		private string _name = "NewProject";
-		public string Name
+		private string _projectName = "NewProject";
+		public string ProjectName
 		{
-			get => _name;
+			get => _projectName;
 			set
 			{
-				if (_name != value)
+				if (_projectName != value)
 				{
-					_name = value;
-					OnPropertyChanged(nameof(Name));
+					_projectName = value;
+					ValidateProjectPath();
+					OnPropertyChanged(nameof(ProjectName));
 				}
 			}
 		}
 
-		private string _path = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\SpoonProjects\";
-		public string Path
+		private string _projectPath = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\SpoonProjects\";
+		public string ProjectPath
 		{
-			get => _path;
+			get => _projectPath;
 			set
 			{
-				if (_path != value)
+				if (_projectPath != value)
 				{
-					_path = value;
-					OnPropertyChanged(nameof(Path));
+					_projectPath = value;
+					ValidateProjectPath();
+					OnPropertyChanged(nameof(ProjectPath));
 				}
 			}
+		}
+
+		private ObservableCollection<ProjectTemplate> _projectTemplates = new ObservableCollection<ProjectTemplate>();
+		public ReadOnlyObservableCollection<ProjectTemplate> ProjectTemplates
+		{ get; }
+
+		private bool _isValid = false;
+		public bool IsValid
+		{
+			get => _isValid;
+			set
+			{
+				if (_isValid != value)
+				{
+					_isValid = value;
+					OnPropertyChanged(nameof(IsValid));
+				}
+			}
+		}
+
+		private string _errorMsg;
+		public string ErrorMsg
+		{
+			get => _errorMsg;
+			set
+			{
+				if (_errorMsg != value)
+				{
+					_errorMsg = value;
+					OnPropertyChanged(nameof(ErrorMsg));
+				}
+			}
+		}
+
+		private bool ValidateProjectPath()
+		{
+			string path = ProjectPath;
+			if (!Path.EndsInDirectorySeparator(path))
+				path += @"\";
+
+			path += $@"{ProjectName}\";
+
+			IsValid = false;
+			if (string.IsNullOrWhiteSpace(ProjectName.Trim()))
+			{
+				ErrorMsg = "Type in a project name.";
+			}
+			else if (ProjectName.IndexOfAny(Path.GetInvalidFileNameChars()) != -1)
+			{
+				ErrorMsg = "Invalid characters in project name.";
+			}
+			else if (string.IsNullOrWhiteSpace(ProjectPath.Trim()))
+			{
+				ErrorMsg = "Type in a project path.";
+			}
+			else if (ProjectPath.IndexOfAny(Path.GetInvalidPathChars()) != -1)
+			{
+				ErrorMsg = "Invalid characters in project path.";
+			}
+			else if (Directory.Exists(path) && Directory.EnumerateFileSystemEntries(path).Any())
+			{
+				ErrorMsg = "Selected project folder already exists and not empty";
+			}
+			else
+			{
+				ErrorMsg = string.Empty;
+				IsValid = true;
+			}
+
+			return IsValid;
 		}
 
 		public NewProject()
 		{
+			ProjectTemplates = new ReadOnlyObservableCollection<ProjectTemplate>(_projectTemplates);
 			try
 			{
 				string[] templateFiles = Directory.GetFiles(_templatesPath, "template.xml", SearchOption.AllDirectories);
 				Debug.Assert(templateFiles.Any());
 				foreach (string file in templateFiles)
 				{
-					ProjectTemplate template = new ProjectTemplate()
-					{
-						ProjectType = "Empty Project",
-						ProjectFile = "Project.spoonengine",
-						Folders = new List<string> { ".Spoon", "Content", "GameCode"},
-					};
+					ProjectTemplate template = Serializer.FromFile<ProjectTemplate>(file);
+					template.IconFilepath = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(file), "Icon.png"));
+					template.Icon = File.ReadAllBytes(template.IconFilepath);
+					template.ScreenshotFilepath = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(file), "Screenshot.png"));
+					template.Screenshot = File.ReadAllBytes(template.ScreenshotFilepath);
 
-					Serializer.ToFile(template, file);
+					template.ProjectFilePath = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(file), template.ProjectFile));
+					_projectTemplates.Add(template);
 				}
+				ValidateProjectPath();
 			}
 			catch (Exception ex)
 			{

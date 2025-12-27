@@ -14,5 +14,7 @@ namespace SpoonEditor.Utils
 
 		public const string Scenes = "Scenes";
 		public const string Default_Scene = "Default Scene";
+
+		public const string ProjectHiddenFolderName = @".Spoon\";
 	}
 }

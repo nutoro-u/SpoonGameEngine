@@ -152,13 +152,15 @@ namespace SpoonEditor.GameProject
 				{
 					Directory.CreateDirectory(Path.GetFullPath(Path.Combine(Path.GetDirectoryName(path), folder)));
 				}
-				DirectoryInfo dirIfo = new DirectoryInfo(path + @".Spoon\");
+				DirectoryInfo dirIfo = new DirectoryInfo(path + Cts.ProjectHiddenFolderName);
 				dirIfo.Attributes |= FileAttributes.Hidden;
 				File.Copy(template.IconFilepath, Path.GetFullPath(Path.Combine(dirIfo.FullName, Cts.IconFileName)));
 				File.Copy(template.ScreenshotFilepath, Path.GetFullPath(Path.Combine(dirIfo.FullName, Cts.ScreenshotFileName)));
 
-				Project project = new Project(ProjectName, path);
-				Serializer.ToFile(project, path + "ProjectName" + Cts.ProjectExtension);
+				string projectXml = File.ReadAllText(template.ProjectFilePath);
+				projectXml = string.Format(projectXml, ProjectName, ProjectPath);
+				string projectPath = Path.GetFullPath(Path.Combine(path, $"{ProjectName}{Cts.ProjectExtension}"));
+				File.WriteAllText(projectPath, projectXml);
 
 				return path;
 			}

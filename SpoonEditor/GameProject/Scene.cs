@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace SpoonEditor.GameProject
 {
+	[DataContract]
     public class Scene : ViewModelBase
     {
 		private string _name;
+		
+		[DataMember]
 		public string Name
 		{
 			get => _name;
@@ -21,6 +25,7 @@ namespace SpoonEditor.GameProject
 			}
 		}
 
+		[DataMember]
 		public Project Project { get; private set; }
 
 		public Scene(Project project, string name)

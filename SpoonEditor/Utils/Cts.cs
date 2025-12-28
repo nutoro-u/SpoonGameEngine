@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Controls.Primitives;
 
 namespace SpoonEditor.Utils
 {
@@ -9,6 +10,9 @@ namespace SpoonEditor.Utils
 		public const string IconFileName = "Icon.png";
 		public const string ScreenshotFileName = "Screenshot.png";
 
+		public const string IconRelativePath = ProjectHiddenFolderName + IconFileName;
+		public const string ScreenshotRelativePath = ProjectHiddenFolderName + ScreenshotFileName;
+
 		public const string ProjectExtension = ".spoonengine";
 		public const string Game = "Game";
 
@@ -16,5 +20,13 @@ namespace SpoonEditor.Utils
 		public const string Default_Scene = "Default Scene";
 
 		public const string ProjectHiddenFolderName = @".Spoon\";
+		public const string SpoonEditor = "SpoonEditor";
+
+		public static readonly string ApplicationDataPath = 
+			$@"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}\{SpoonEditor}\";
+
+		public const string ProjectData = "ProjectData";
+		public const string ProjectDataXml = ProjectData + ".xml";
+		public static readonly string ProjectDataPath = $@"{ApplicationDataPath}{ProjectDataXml}";
 	}
 }

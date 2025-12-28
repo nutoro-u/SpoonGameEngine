@@ -166,9 +166,7 @@ namespace SpoonEditor.GameProject
 			}
 			catch (Exception ex)
 			{
-				Debug.WriteLine(ex.Message);
-				// TODO log error
-
+				MyDebug.WriteLine(ex.Message);
 				return string.Empty;
 			}
 		}
@@ -195,8 +193,7 @@ namespace SpoonEditor.GameProject
 			}
 			catch (Exception ex)
 			{
-				Debug.WriteLine(ex.Message);
-				// TODO log error
+				MyDebug.WriteLine(ex.Message);
 			}
 		}
 	}

@@ -20,8 +20,7 @@ namespace SpoonEditor.Utils
 			}
 			catch(Exception ex)
 			{
-				Debug.WriteLine(ex.Message);
-				// TODO log error
+				MyDebug.WriteLine(ex.Message);
 			}
 		}
 
@@ -36,8 +35,7 @@ namespace SpoonEditor.Utils
 			}
 			catch (Exception ex)
 			{
-				Debug.WriteLine(ex.Message);
-				// TODO log error
+				MyDebug.WriteLine(ex.Message);
 				return default(T);
 			}
 		}

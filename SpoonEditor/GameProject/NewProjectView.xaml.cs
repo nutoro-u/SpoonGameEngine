@@ -23,6 +23,7 @@ namespace SpoonEditor.GameProject
 			if (!string.IsNullOrEmpty(projectPath))
 			{
 				dialogResult = true;
+				Project project = OpenProject.Open(new ProjectData() { ProjectName = newProject.ProjectName, ProjectPath = projectPath });
 			}
 			window.DialogResult = dialogResult;
 			window.Close();

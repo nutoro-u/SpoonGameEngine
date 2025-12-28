@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Controls.Primitives;
 
 namespace SpoonEditor.Utils
 {
-    public static class Cts
-    {
+	public static class Cts
+	{
 		public const string IconFileName = "Icon.png";
 		public const string ScreenshotFileName = "Screenshot.png";
 
@@ -22,11 +19,13 @@ namespace SpoonEditor.Utils
 		public const string ProjectHiddenFolderName = @".Spoon\";
 		public const string SpoonEditor = "SpoonEditor";
 
-		public static readonly string ApplicationDataPath = 
+		public static readonly string ApplicationDataPath =
 			$@"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}\{SpoonEditor}\";
 
 		public const string ProjectData = "ProjectData";
 		public const string ProjectDataXml = ProjectData + ".xml";
 		public static readonly string ProjectDataPath = $@"{ApplicationDataPath}{ProjectDataXml}";
+
+		public const string New_Project = "New Project";
 	}
 }

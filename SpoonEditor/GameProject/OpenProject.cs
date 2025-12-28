@@ -70,7 +70,7 @@ namespace SpoonEditor.GameProject
 			}
 			WriteProjectData();
 
-			return null;
+			return Project.Load(project.FullPath);
 		}
 		private static void ReadProjectData()
 		{

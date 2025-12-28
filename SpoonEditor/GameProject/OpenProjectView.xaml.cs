@@ -22,5 +22,29 @@ namespace SpoonEditor.GameProject
 		{
 			InitializeComponent();
 		}
+
+		private void OpenButtonClicked(object sender, RoutedEventArgs e)
+		{
+			OpenSelectedProject();
+		}
+
+		private void ListBoxItemMouseDoubleClicked(object sender, RoutedEventArgs e)
+		{
+			OpenSelectedProject();
+		}
+
+		private void OpenSelectedProject()
+		{
+			Project project = OpenProject.Open(projectsListBox.SelectedItem as ProjectData);
+
+			bool dialogResult = false;
+			Window window = Window.GetWindow(this);
+			if (project != null)
+			{
+				dialogResult = true;
+			}
+			window.DialogResult = dialogResult;
+			window.Close();
+		}
 	}
 }

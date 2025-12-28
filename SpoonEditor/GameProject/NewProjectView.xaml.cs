@@ -24,6 +24,7 @@ namespace SpoonEditor.GameProject
 			{
 				dialogResult = true;
 				Project project = OpenProject.Open(new ProjectData() { ProjectName = newProject.ProjectName, ProjectPath = projectPath });
+				window.DataContext = project;
 			}
 			window.DialogResult = dialogResult;
 			window.Close();

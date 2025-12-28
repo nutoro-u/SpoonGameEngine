@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SpoonEditor.Utils;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -21,6 +22,12 @@ namespace SpoonEditor.GameProject
 		public OpenProjectView()
 		{
 			InitializeComponent();
+
+			Loaded += (s, e) =>
+			{
+				ListBoxItem item = projectsListBox.ItemContainerGenerator.ContainerFromItem(projectsListBox.SelectedIndex) as ListBoxItem;
+				item?.Focus();
+			};
 		}
 
 		private void OpenButtonClicked(object sender, RoutedEventArgs e)
@@ -42,6 +49,7 @@ namespace SpoonEditor.GameProject
 			if (project != null)
 			{
 				dialogResult = true;
+				window.DataContext = project;
 			}
 			window.DialogResult = dialogResult;
 			window.Close();

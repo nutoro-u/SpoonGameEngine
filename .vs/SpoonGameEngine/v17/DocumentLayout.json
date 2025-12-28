@@ -3,40 +3,68 @@
   "WorkspaceRootPath": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\editors\\worldeditor\\projectlayoutview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\editors\\worldeditor\\projectlayoutview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\gameproject\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\gameproject\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\gameproject\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\gameproject\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\utils\\undoredo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\utils\\undoredo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\editors\\worldeditor\\projectlayoutview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\editors\\worldeditor\\projectlayoutview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\common\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\common\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\gameproject\\openprojectview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\gameproject\\openprojectview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\gameproject\\newprojectview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\gameproject\\newprojectview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\gameproject\\openproject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\gameproject\\openproject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\gameproject\\openprojectview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\gameproject\\openprojectview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\utils\\cts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\utils\\cts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\gameproject\\projectbrowserdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\gameproject\\projectbrowserdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\gameproject\\newprojectview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\gameproject\\newprojectview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\gameproject\\openprojectview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\gameproject\\openprojectview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\gameproject\\openproject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\gameproject\\openproject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\editors\\worldeditor\\worldeditorview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\editors\\worldeditor\\worldeditorview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\editors\\worldeditor\\worldeditorview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\editors\\worldeditor\\worldeditorview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\gameproject\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\gameproject\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\gameproject\\projectbrowserdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\gameproject\\projectbrowserdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\gameproject\\newprojectview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -71,10 +99,6 @@
       "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\gameproject\\projectbrowserdialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\spooneditor.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\spooneditor.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
@@ -86,7 +110,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -94,103 +118,51 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Project.cs",
-              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\Project.cs",
-              "RelativeDocumentMoniker": "SpoonEditor\\GameProject\\Project.cs",
-              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\Project.cs",
-              "RelativeToolTip": "SpoonEditor\\GameProject\\Project.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAADwvzYAAAADAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "RelayCommand.cs",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\Common\\RelayCommand.cs",
+              "RelativeDocumentMoniker": "SpoonEditor\\Common\\RelayCommand.cs",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\Common\\RelayCommand.cs",
+              "RelativeToolTip": "SpoonEditor\\Common\\RelayCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T13:50:50.032Z",
+              "WhenOpened": "2025-12-28T19:04:49.421Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "SpoonEditor\\MainWindow.xaml.cs",
-              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\MainWindow.xaml.cs",
-              "RelativeToolTip": "SpoonEditor\\MainWindow.xaml.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAACwAAAADAAAAAAAAAA==",
+              "Title": "UndoRedo.cs",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\Utils\\UndoRedo.cs",
+              "RelativeDocumentMoniker": "SpoonEditor\\Utils\\UndoRedo.cs",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\Utils\\UndoRedo.cs",
+              "RelativeToolTip": "SpoonEditor\\Utils\\UndoRedo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-26T06:15:58.434Z",
+              "WhenOpened": "2025-12-28T18:31:07.959Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "NewProjectView.xaml.cs",
-              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\NewProjectView.xaml.cs",
-              "RelativeDocumentMoniker": "SpoonEditor\\GameProject\\NewProjectView.xaml.cs",
-              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\NewProjectView.xaml.cs",
-              "RelativeToolTip": "SpoonEditor\\GameProject\\NewProjectView.xaml.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAA9wBkAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T16:13:07.119Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ProjectBrowserDialog.xaml",
-              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\ProjectBrowserDialog.xaml",
-              "RelativeDocumentMoniker": "SpoonEditor\\GameProject\\ProjectBrowserDialog.xaml",
-              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\ProjectBrowserDialog.xaml",
-              "RelativeToolTip": "SpoonEditor\\GameProject\\ProjectBrowserDialog.xaml",
+              "DocumentIndex": 0,
+              "Title": "ProjectLayoutView.xaml",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\Editors\\WorldEditor\\ProjectLayoutView.xaml",
+              "RelativeDocumentMoniker": "SpoonEditor\\Editors\\WorldEditor\\ProjectLayoutView.xaml",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\Editors\\WorldEditor\\ProjectLayoutView.xaml",
+              "RelativeToolTip": "SpoonEditor\\Editors\\WorldEditor\\ProjectLayoutView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-26T19:36:59.493Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Cts.cs",
-              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\Utils\\Cts.cs",
-              "RelativeDocumentMoniker": "SpoonEditor\\Utils\\Cts.cs",
-              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\Utils\\Cts.cs",
-              "RelativeToolTip": "SpoonEditor\\Utils\\Cts.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T13:33:24.723Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Scene.cs",
-              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\Scene.cs",
-              "RelativeDocumentMoniker": "SpoonEditor\\GameProject\\Scene.cs",
-              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\Scene.cs",
-              "RelativeToolTip": "SpoonEditor\\GameProject\\Scene.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAACgAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T14:02:05.183Z",
+              "WhenOpened": "2025-12-28T16:47:14.497Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "OpenProject.cs",
-              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\OpenProject.cs",
-              "RelativeDocumentMoniker": "SpoonEditor\\GameProject\\OpenProject.cs",
-              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\OpenProject.cs",
-              "RelativeToolTip": "SpoonEditor\\GameProject\\OpenProject.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAAAEgAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-28T10:16:58.765Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "OpenProjectView.xaml.cs",
               "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\OpenProjectView.xaml.cs",
               "RelativeDocumentMoniker": "SpoonEditor\\GameProject\\OpenProjectView.xaml.cs",
               "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\OpenProjectView.xaml.cs",
               "RelativeToolTip": "SpoonEditor\\GameProject\\OpenProjectView.xaml.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAowCsAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAgwBwAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-28T12:50:30.517Z",
               "EditorCaption": ""
@@ -198,6 +170,58 @@
             {
               "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "NewProjectView.xaml.cs",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\NewProjectView.xaml.cs",
+              "RelativeDocumentMoniker": "SpoonEditor\\GameProject\\NewProjectView.xaml.cs",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\NewProjectView.xaml.cs",
+              "RelativeToolTip": "SpoonEditor\\GameProject\\NewProjectView.xaml.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA9wBIAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T16:13:07.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProjectLayoutView.xaml.cs",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\Editors\\WorldEditor\\ProjectLayoutView.xaml.cs",
+              "RelativeDocumentMoniker": "SpoonEditor\\Editors\\WorldEditor\\ProjectLayoutView.xaml.cs",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\Editors\\WorldEditor\\ProjectLayoutView.xaml.cs",
+              "RelativeToolTip": "SpoonEditor\\Editors\\WorldEditor\\ProjectLayoutView.xaml.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAABkAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T16:49:34.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Project.cs",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\Project.cs",
+              "RelativeDocumentMoniker": "SpoonEditor\\GameProject\\Project.cs",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\Project.cs",
+              "RelativeToolTip": "SpoonEditor\\GameProject\\Project.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAE8AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T13:50:50.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Cts.cs",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\Utils\\Cts.cs",
+              "RelativeDocumentMoniker": "SpoonEditor\\Utils\\Cts.cs",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\Utils\\Cts.cs",
+              "RelativeToolTip": "SpoonEditor\\Utils\\Cts.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T13:33:24.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "OpenProjectView.xaml",
               "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\OpenProjectView.xaml",
               "RelativeDocumentMoniker": "SpoonEditor\\GameProject\\OpenProjectView.xaml",
@@ -210,6 +234,94 @@
             {
               "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SpoonEditor\\MainWindow.xaml.cs",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\MainWindow.xaml.cs",
+              "RelativeToolTip": "SpoonEditor\\MainWindow.xaml.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAAC4AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-26T06:15:58.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "OpenProject.cs",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\OpenProject.cs",
+              "RelativeDocumentMoniker": "SpoonEditor\\GameProject\\OpenProject.cs",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\OpenProject.cs",
+              "RelativeToolTip": "SpoonEditor\\GameProject\\OpenProject.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAAAEgAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T10:16:58.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "WorldEditorView.xaml",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\Editors\\WorldEditor\\WorldEditorView.xaml",
+              "RelativeDocumentMoniker": "SpoonEditor\\Editors\\WorldEditor\\WorldEditorView.xaml",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\Editors\\WorldEditor\\WorldEditorView.xaml",
+              "RelativeToolTip": "SpoonEditor\\Editors\\WorldEditor\\WorldEditorView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-28T15:11:35.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "SpoonEditor\\MainWindow.xaml",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\MainWindow.xaml",
+              "RelativeToolTip": "SpoonEditor\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-26T06:15:58.771Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "WorldEditorView.xaml.cs",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\Editors\\WorldEditor\\WorldEditorView.xaml.cs",
+              "RelativeDocumentMoniker": "SpoonEditor\\Editors\\WorldEditor\\WorldEditorView.xaml.cs",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\Editors\\WorldEditor\\WorldEditorView.xaml.cs",
+              "RelativeToolTip": "SpoonEditor\\Editors\\WorldEditor\\WorldEditorView.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T15:12:01.948Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Scene.cs",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\Scene.cs",
+              "RelativeDocumentMoniker": "SpoonEditor\\GameProject\\Scene.cs",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\Scene.cs",
+              "RelativeToolTip": "SpoonEditor\\GameProject\\Scene.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAACgAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T14:02:05.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ProjectBrowserDialog.xaml",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\ProjectBrowserDialog.xaml",
+              "RelativeDocumentMoniker": "SpoonEditor\\GameProject\\ProjectBrowserDialog.xaml",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\ProjectBrowserDialog.xaml",
+              "RelativeToolTip": "SpoonEditor\\GameProject\\ProjectBrowserDialog.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-26T19:36:59.493Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "NewProjectView.xaml",
               "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\NewProjectView.xaml",
               "RelativeDocumentMoniker": "SpoonEditor\\GameProject\\NewProjectView.xaml",
@@ -221,7 +333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 19,
               "Title": "Engine.cpp",
               "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Engine.cpp",
               "RelativeDocumentMoniker": "Engine\\Engine.cpp",
@@ -234,7 +346,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 17,
               "Title": "NewProject.cs",
               "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\NewProject.cs",
               "RelativeDocumentMoniker": "SpoonEditor\\GameProject\\NewProject.cs",
@@ -247,7 +359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 18,
               "Title": "MyDebug.cs",
               "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\Utils\\MyDebug.cs",
               "RelativeDocumentMoniker": "SpoonEditor\\Utils\\MyDebug.cs",
@@ -260,7 +372,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 20,
               "Title": "ViewModelBase.cs",
               "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\Common\\ViewModelBase.cs",
               "RelativeDocumentMoniker": "SpoonEditor\\Common\\ViewModelBase.cs",
@@ -273,7 +385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 21,
               "Title": "Serializer.cs",
               "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\Utils\\Serializer.cs",
               "RelativeDocumentMoniker": "SpoonEditor\\Utils\\Serializer.cs",
@@ -286,7 +398,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 22,
               "Title": "SpoonEditor.csproj",
               "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\SpoonEditor.csproj",
               "RelativeDocumentMoniker": "SpoonEditor\\SpoonEditor.csproj",
@@ -298,7 +410,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 24,
               "Title": "SpoonEditor",
               "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\SpoonEditor.csproj",
               "RelativeDocumentMoniker": "SpoonEditor\\SpoonEditor.csproj",
@@ -309,7 +421,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 23,
               "Title": "ProjectBrowserDialog.xaml.cs",
               "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\ProjectBrowserDialog.xaml.cs",
               "RelativeDocumentMoniker": "SpoonEditor\\GameProject\\ProjectBrowserDialog.xaml.cs",
@@ -318,17 +430,6 @@
               "ViewState": "AgIAAAkAAAAAAAAAAAAqwBUAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-26T15:30:03.269Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "SpoonEditor\\MainWindow.xaml",
-              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\MainWindow.xaml",
-              "RelativeToolTip": "SpoonEditor\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-26T06:15:58.771Z"
             }
           ]
         }

@@ -27,5 +27,6 @@ namespace SpoonEditor.Utils
 		public static readonly string ProjectDataPath = $@"{ApplicationDataPath}{ProjectDataXml}";
 
 		public const string New_Project = "New Project";
+		public const string New_Scene = "New Scene";
 	}
 }

@@ -41,6 +41,9 @@ namespace SpoonEditor.GameProject
 				}
 			}
 		}
+		public ICommand Undo { get; private set; }
+		public ICommand Redo { get; private set; }
+
 
 		public ICommand AddScene { get; private set; }
 		public ICommand RemoveScene { get; private set; }
@@ -87,6 +90,9 @@ namespace SpoonEditor.GameProject
 					() => RemoveSceneInternal(x),
 					$"Remove {x.Name}"));
 			}, x => !x.IsActive);
+
+			Undo = new RelayCommand<object>(x => UndoRedo.Undo());
+			Redo = new RelayCommand<object>(x => UndoRedo.Redo());
 		}
 
 		public static Project Load(string file)

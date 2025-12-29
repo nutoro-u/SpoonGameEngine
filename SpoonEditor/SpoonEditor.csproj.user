@@ -17,5 +17,8 @@
     <Compile Update="GameProject\ProjectBrowserDialog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Utils\UndoRedoView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

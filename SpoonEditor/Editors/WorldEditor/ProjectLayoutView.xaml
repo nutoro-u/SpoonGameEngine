@@ -8,7 +8,7 @@
              mc:Ignorable="d"
 			 d:DataContext="{d:DesignInstance Type=proj:Project, IsDesignTimeCreatable=True}"
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="32"/>
 			<RowDefinition/>
@@ -28,7 +28,12 @@
 						<Expander IsExpanded="{Binding IsActive, Mode=OneWay}">
 							<Expander.Header>
 								<Grid>
-									<TextBlock Text="{Binding Name}"/>
+									<StackPanel Orientation="Horizontal">
+										<TextBlock Text="{Binding Name}"/>
+										<Button Content="Remove" 
+												Command="{Binding DataContext.RemoveScene, RelativeSource={RelativeSource AncestorType=UserControl}}"
+												CommandParameter="{Binding}" Margin="20,0" Focusable="False"/>
+									</StackPanel>
 								</Grid>
 							</Expander.Header>
 							<Border Background="Aqua" Height="100"/>

@@ -1,17 +1,7 @@
-﻿using SpoonEditor.GameProject;
-using SpoonEditor.Utils;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using SpoonEditor.Components;
+using SpoonEditor.GameProject;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace SpoonEditor.Editors
 {
@@ -23,6 +13,13 @@ namespace SpoonEditor.Editors
 		public ProjectLayoutView()
 		{
 			InitializeComponent();
+		}
+
+		private void OnAddEntityButtonClicked(object sender, RoutedEventArgs e)
+		{
+			Button button = sender as Button;
+			Scene scene = button.DataContext as Scene;
+			scene.AddGameEntityCommand.Execute(new GameEntity(scene) { Name = "New Game Entity" });
 		}
 	}
 }

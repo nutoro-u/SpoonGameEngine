@@ -37,10 +37,20 @@ namespace SpoonEditor.Utils
 			_undoAction = undoAction;
 			_redoAction = redoAction;
 		}
+
+		public UndoRedoAction(string property, object instance, object undoValue, object redoValue, string name) :
+			this(
+				() => instance.GetType().GetProperty(property).SetValue(instance, undoValue),
+				() => instance.GetType().GetProperty(property).SetValue(instance, redoValue), name)
+		{
+
+		}
 	}
 
 	public class UndoRedo
 	{
+		private bool enableAdd = true;
+
 		private readonly ObservableCollection<IUndoRedo> _redoList = new ObservableCollection<IUndoRedo>();
 		private readonly ObservableCollection<IUndoRedo> _undoList = new ObservableCollection<IUndoRedo>();
 
@@ -59,7 +69,9 @@ namespace SpoonEditor.Utils
 			{
 				IUndoRedo cmd = _undoList.Last();
 				_undoList.RemoveAt(_undoList.Count - 1);
+				enableAdd = false;
 				cmd.Undo();
+				enableAdd = true;
 				_redoList.Insert(0, cmd);
 			}
 		}
@@ -70,15 +82,20 @@ namespace SpoonEditor.Utils
 			{
 				IUndoRedo cmd = _redoList.First();
 				_redoList.RemoveAt(0);
+				enableAdd = false;
 				cmd.Redo();
+				enableAdd = true;
 				_undoList.Add(cmd);
 			}
 		}
 
 		public void Add(IUndoRedo cmd)
 		{
-			_undoList.Add(cmd);
-			_redoList.Clear();
+			if (enableAdd)
+			{
+				_undoList.Add(cmd);
+				_redoList.Clear();
+			}
 		}
 
 		public void Reset()

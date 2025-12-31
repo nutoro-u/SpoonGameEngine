@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,6 +21,19 @@ namespace SpoonEditor.GameProject
 		public ProjectBrowserDialog()
 		{
 			InitializeComponent();
+
+			Loaded += OnLoaded;
+		}
+
+		private void OnLoaded(object sender, RoutedEventArgs e)
+		{
+			Loaded -= OnLoaded;
+			if(!OpenProject.Projects.Any())
+			{
+				OpenProjectButton.IsEnabled = false;
+				openProjectView.Visibility = Visibility.Hidden;
+				OnToggleButtonClick(NewProjectButton, new RoutedEventArgs());
+			}
 		}
 
 		private void OnToggleButtonClick(object sender, RoutedEventArgs e)

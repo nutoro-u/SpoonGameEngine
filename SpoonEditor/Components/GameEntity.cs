@@ -72,6 +72,14 @@ namespace SpoonEditor.Components
 
 				Project.UndoRedo.Add(new UndoRedoAction(nameof(Name), this, oldName, x, $"Rename entity {oldName} to {x}"));
 			}, x => x != _name);
+
+			EnableCommand = new RelayCommand<bool>(x =>
+			{
+				bool oldValue = _isEnabled;
+				IsEnabled = x;
+
+				Project.UndoRedo.Add(new UndoRedoAction(nameof(IsEnabled), this, oldValue, x, $"Set entity isEnabled to {x}"));
+			});
 		}
 
 		public GameEntity(Scene parentScene)

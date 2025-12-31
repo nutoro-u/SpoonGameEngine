@@ -9,6 +9,7 @@ using System.Text;
 namespace SpoonEditor.Components
 {
 	[DataContract]
+	[KnownType(typeof(Transform))]
     public class GameEntity : ViewModelBase
 	{
 		private string _name;
@@ -32,12 +33,23 @@ namespace SpoonEditor.Components
 
 		[DataMember(Name = nameof(Components))]
 		private readonly ObservableCollection<Component> _components = new ObservableCollection<Component>();
-		public ReadOnlyObservableCollection<Component> Components { get; }
+		public ReadOnlyObservableCollection<Component> Components { get; private set; }
+
+		[OnDeserialized]
+		private void OnDeserialized(StreamingContext context)
+		{
+			if(Components != null)
+			{
+				Components = new ReadOnlyObservableCollection<Component>(_components);
+				OnPropertyChanged(nameof(Components));
+			}
+		}
 
 		public GameEntity(Scene parentScene)
 		{
 			Debug.Assert(parentScene != null);
 			ParentScene = parentScene;
+			_components.Add(new Transform(this));
 		}
 	}
 }

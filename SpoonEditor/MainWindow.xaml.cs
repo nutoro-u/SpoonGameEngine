@@ -1,4 +1,5 @@
 ﻿using SpoonEditor.GameProject;
+using SpoonEditor.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,6 +47,7 @@ namespace SpoonEditor
 			var projectBrowser = new ProjectBrowserDialog();
 			if (projectBrowser.ShowDialog() == false || projectBrowser.DataContext == null)
 			{
+				MyDebug.WriteLine($"projectBrowser.DataContext {projectBrowser.DataContext}");
 				Application.Current.Shutdown();
 			}
 			else

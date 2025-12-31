@@ -21,5 +21,11 @@ namespace SpoonEditor.Editors
 			Scene scene = button.DataContext as Scene;
 			scene.AddGameEntityCommand.Execute(new GameEntity(scene) { Name = "New Game Entity" });
 		}
+
+		private void OnGameEntitySelected(object sender, SelectionChangedEventArgs e)
+		{
+			object entity = (sender as ListBox).SelectedItems[0];
+			GameEntityView.Instance.DataContext = entity;
+		}
 	}
 }

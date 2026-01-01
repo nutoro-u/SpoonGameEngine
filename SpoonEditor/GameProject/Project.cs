@@ -13,7 +13,7 @@ using System.Windows.Input;
 namespace SpoonEditor.GameProject
 {
 	[DataContract(Name = Cts.Game)]
-	public class Project : ViewModelBase
+	class Project : ViewModelBase
 	{
 		[DataMember]
 		public string Name { get; private set; } = Cts.New_Project;

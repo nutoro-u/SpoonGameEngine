@@ -30,11 +30,6 @@ namespace SpoonEditor.Editors
 			GameEntityView.Instance.DataContext = null;
 			ListBox listBox = sender as ListBox;
 
-			if (e.AddedItems.Count > 0)
-			{
-				GameEntityView.Instance.DataContext = listBox.SelectedItems[0];
-			}
-
 			List<GameEntity> newSelection = listBox.SelectedItems.Cast<GameEntity>().ToList();
 			List<GameEntity> LastSelection = newSelection.Except(e.AddedItems.Cast<GameEntity>()).Concat(e.RemovedItems.Cast<GameEntity>()).ToList();
 			Project.UndoRedo.Add(new UndoRedoAction(
@@ -49,6 +44,13 @@ namespace SpoonEditor.Editors
 					newSelection.ForEach(x => (listBox.ItemContainerGenerator.ContainerFromItem(x) as ListBoxItem).IsSelected = true);
 				},
 				"Selection Changed"));
+
+			MSGameEntity msEntity = null;
+			if(newSelection.Any())
+			{
+				msEntity = new MSGameEntity(newSelection);
+			}
+			GameEntityView.Instance.DataContext = msEntity;
 		}
 	}
 }

@@ -47,7 +47,7 @@ namespace SpoonEditor
 			var projectBrowser = new ProjectBrowserDialog();
 			if (projectBrowser.ShowDialog() == false || projectBrowser.DataContext == null)
 			{
-				MyDebug.WriteLine($"projectBrowser.DataContext {projectBrowser.DataContext}");
+				Logger.Log(MessageType.Error, $"projectBrowser.DataContext {projectBrowser.DataContext}");
 				Application.Current.Shutdown();
 			}
 			else

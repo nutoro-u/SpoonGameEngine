@@ -21,6 +21,23 @@ namespace SpoonEditor.Utils
 		public LoggerView()
 		{
 			InitializeComponent();
+			Logger.Log(MessageType.Info, "info");
+			Logger.Log(MessageType.Warning, "warning");
+			Logger.Log(MessageType.Error, "error");
+		}
+
+		private void OnClearButtonClick(object sender, RoutedEventArgs e)
+		{
+			Logger.Clear();
+		}
+
+		private void OnFilterClick(object sender, RoutedEventArgs e)
+		{
+			var filter = 0x0;
+			if(toggleInfo.IsChecked == true) filter |= (int)MessageType.Info;
+			if (toggleWarn.IsChecked == true) filter |= (int)MessageType.Warning;
+			if (toggleError.IsChecked == true) filter |= (int)MessageType.Error;
+			Logger.SetMessageFilter(filter);
 		}
 	}
 }

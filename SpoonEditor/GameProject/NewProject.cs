@@ -166,8 +166,9 @@ namespace SpoonEditor.GameProject
 			}
 			catch (Exception ex)
 			{
-				MyDebug.WriteLine(ex.Message);
-				return string.Empty;
+				Debug.WriteLine(ex.Message);
+				Logger.Log(MessageType.Error, $"Failed to create {ProjectName} | {ex.Message}");
+				throw;
 			}
 		}
 
@@ -193,7 +194,9 @@ namespace SpoonEditor.GameProject
 			}
 			catch (Exception ex)
 			{
-				MyDebug.WriteLine(ex.Message);
+				Debug.WriteLine(ex.Message);
+				Logger.Log(MessageType.Error, $"Failed to read project templates | {ex.Message}");
+				throw;
 			}
 		}
 	}

@@ -20,7 +20,9 @@ namespace SpoonEditor.Utils
 			}
 			catch(Exception ex)
 			{
-				MyDebug.WriteLine(ex.Message);
+				Debug.WriteLine(ex.Message);
+				Logger.Log(MessageType.Error, $"Failed to serialize {instance} to {path} | {ex.Message}");
+				throw;
 			}
 		}
 
@@ -35,8 +37,9 @@ namespace SpoonEditor.Utils
 			}
 			catch (Exception ex)
 			{
-				MyDebug.WriteLine(ex.Message);
-				return default(T);
+				Debug.WriteLine(ex.Message);
+				Logger.Log(MessageType.Error, $"Failed to deserialize {path} | {ex.Message}");
+				throw;
 			}
 		}
 	}

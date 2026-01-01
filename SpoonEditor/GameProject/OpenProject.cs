@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -49,7 +50,9 @@ namespace SpoonEditor.GameProject
 			}
 			catch(Exception ex)
 			{
-				MyDebug.WriteLine(ex.Message);
+				Debug.WriteLine(ex.Message);
+				Logger.Log(MessageType.Error, $"Failed to open project | Failed to read project data | {ex.Message}");
+				throw;
 			}
 		}
 

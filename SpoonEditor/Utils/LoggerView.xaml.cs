@@ -21,9 +21,6 @@ namespace SpoonEditor.Utils
 		public LoggerView()
 		{
 			InitializeComponent();
-			Logger.Log(MessageType.Info, "info");
-			Logger.Log(MessageType.Warning, "warning");
-			Logger.Log(MessageType.Error, "error");
 		}
 
 		private void OnClearButtonClick(object sender, RoutedEventArgs e)

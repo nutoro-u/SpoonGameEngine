@@ -44,7 +44,7 @@ namespace SpoonEditor.Utils
 	{
 		private static int _messageFilter = (int)(MessageType.Info | MessageType.Warning | MessageType.Error);
 
-		public static ObservableCollection<LogMessage> _messages = new ObservableCollection<LogMessage>();
+		public static readonly ObservableCollection<LogMessage> _messages = new ObservableCollection<LogMessage>();
 		public static ReadOnlyObservableCollection<LogMessage> Messages { get; } = new ReadOnlyObservableCollection<LogMessage>(_messages);
 
 		public static CollectionViewSource FilteredMessages {  get; } = new CollectionViewSource() { Source = Messages };

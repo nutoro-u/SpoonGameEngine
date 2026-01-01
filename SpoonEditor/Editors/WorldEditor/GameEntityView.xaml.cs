@@ -52,6 +52,16 @@ namespace SpoonEditor.Editors
 				(DataContext as MSEntity).Refresh();
 			});
 		}
+		private Action GetEnableAction()
+		{
+			MSEntity msEntity = DataContext as MSEntity;
+			var selection = msEntity.SelectedEntities.Select(entity => (entity, entity.IsEnabled)).ToList();
+			return new Action(() =>
+			{
+				selection.ForEach(item => item.entity.IsEnabled = item.IsEnabled);
+				(DataContext as MSEntity).Refresh();
+			});
+		}
 
 		private void OnNameTextBoxGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
 		{
@@ -67,6 +77,17 @@ namespace SpoonEditor.Editors
 				_propertyName = null;
 			}
 			_undoAction = null;
+		}
+
+		private void OnIsEnabledClick(object sender, RoutedEventArgs e)
+		{
+			var undoAction = GetEnableAction();
+			MSEntity msEntity = DataContext as MSEntity;
+			msEntity.IsEnabled = (sender as CheckBox).IsChecked == true;
+
+			var redoAction = GetEnableAction();
+			Project.UndoRedo.Add(new UndoRedoAction(undoAction, redoAction,
+				msEntity.IsEnabled == true ? "Enable game entity" : "Disable game entity"));
 		}
 	}
 }

@@ -3,20 +3,51 @@
   "WorkspaceRootPath": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\components\\gameentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\components\\gameentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\gameproject\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\gameproject\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\dllwrapers\\engineapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\dllwrapers\\engineapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B7E5FAB7-1598-419D-B187-066A25AF186E}|EngineTest\\EngineTest.vcxproj|E:\\GD\\DX12\\solutions\\SpoonGameEngine\\EngineTest\\TestEntityComponents.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B7E5FAB7-1598-419D-B187-066A25AF186E}|EngineTest\\EngineTest.vcxproj|solutionrelative:EngineTest\\TestEntityComponents.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7E5FAB7-1598-419D-B187-066A25AF186E}|EngineTest\\EngineTest.vcxproj|E:\\GD\\DX12\\solutions\\SpoonGameEngine\\EngineTest\\Test.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B7E5FAB7-1598-419D-B187-066A25AF186E}|EngineTest\\EngineTest.vcxproj|solutionrelative:EngineTest\\Test.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B7E5FAB7-1598-419D-B187-066A25AF186E}|EngineTest\\EngineTest.vcxproj|E:\\GD\\DX12\\solutions\\SpoonGameEngine\\EngineTest\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B7E5FAB7-1598-419D-B187-066A25AF186E}|EngineTest\\EngineTest.vcxproj|solutionrelative:EngineTest\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29BA4192-749C-4223-93BB-6B4D711593A5}|Engine\\Engine.vcxproj|E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Components\\Transform.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{29BA4192-749C-4223-93BB-6B4D711593A5}|Engine\\Engine.vcxproj|solutionrelative:Engine\\Components\\Transform.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{4813C1DE-5657-468C-B657-ECD9138BD3AA}|EngineDLL\\EngineDLL.vcxproj|E:\\GD\\DX12\\solutions\\SpoonGameEngine\\EngineDLL\\dllmain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4813C1DE-5657-468C-B657-ECD9138BD3AA}|EngineDLL\\EngineDLL.vcxproj|solutionrelative:EngineDLL\\dllmain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B7E5FAB7-1598-419D-B187-066A25AF186E}|EngineTest\\EngineTest.vcxproj|E:\\GD\\DX12\\solutions\\SpoonGameEngine\\EngineTest\\Test.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B7E5FAB7-1598-419D-B187-066A25AF186E}|EngineTest\\EngineTest.vcxproj|solutionrelative:EngineTest\\Test.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{4813C1DE-5657-468C-B657-ECD9138BD3AA}|EngineDLL\\EngineDLL.vcxproj|E:\\GD\\DX12\\solutions\\SpoonGameEngine\\EngineDLL\\EngineAPI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4813C1DE-5657-468C-B657-ECD9138BD3AA}|EngineDLL\\EngineDLL.vcxproj|solutionrelative:EngineDLL\\EngineAPI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\utils\\id.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\utils\\id.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|e:\\gd\\dx12\\solutions\\spoongameengine\\spooneditor\\spooneditor.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4E44017E-2A9A-42A3-B3C1-A9E17F4DA17A}|SpoonEditor\\SpoonEditor.csproj|solutionrelative:spooneditor\\spooneditor.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\10.0.101\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.EolTargetFrameworks.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29BA4192-749C-4223-93BB-6B4D711593A5}|Engine\\Engine.vcxproj|E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Components\\Transform.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29BA4192-749C-4223-93BB-6B4D711593A5}|Engine\\Engine.vcxproj|solutionrelative:Engine\\Components\\Transform.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{29BA4192-749C-4223-93BB-6B4D711593A5}|Engine\\Engine.vcxproj|E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Components\\ComponentsCommon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -70,7 +101,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,20 +109,111 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TestEntityComponents.h",
-              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\EngineTest\\TestEntityComponents.h",
-              "RelativeDocumentMoniker": "EngineTest\\TestEntityComponents.h",
-              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\EngineTest\\TestEntityComponents.h",
-              "RelativeToolTip": "EngineTest\\TestEntityComponents.h",
-              "ViewState": "AgIAACgAAAAAAAAAAAAowE4AAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-02T11:20:16.163Z",
+              "DocumentIndex": 1,
+              "Title": "Scene.cs",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\Scene.cs",
+              "RelativeDocumentMoniker": "SpoonEditor\\GameProject\\Scene.cs",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\GameProject\\Scene.cs",
+              "RelativeToolTip": "SpoonEditor\\GameProject\\Scene.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAFQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T13:53:06.567Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
+              "Title": "ID.cs",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\Utils\\ID.cs",
+              "RelativeDocumentMoniker": "SpoonEditor\\Utils\\ID.cs",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\Utils\\ID.cs",
+              "RelativeToolTip": "SpoonEditor\\Utils\\ID.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T13:25:38.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EngineAPI.cs",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\DllWrapers\\EngineAPI.cs",
+              "RelativeDocumentMoniker": "SpoonEditor\\DllWrapers\\EngineAPI.cs",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\DllWrapers\\EngineAPI.cs",
+              "RelativeToolTip": "SpoonEditor\\DllWrapers\\EngineAPI.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAABUAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T13:13:18.81Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SpoonEditor",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\SpoonEditor.csproj",
+              "RelativeDocumentMoniker": "SpoonEditor\\SpoonEditor.csproj",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\SpoonEditor.csproj",
+              "RelativeToolTip": "SpoonEditor\\SpoonEditor.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-02T13:12:15.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GameEntity.cs",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\Components\\GameEntity.cs",
+              "RelativeDocumentMoniker": "SpoonEditor\\Components\\GameEntity.cs",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\SpoonEditor\\Components\\GameEntity.cs",
+              "RelativeToolTip": "SpoonEditor\\Components\\GameEntity.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAgwF0AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-02T13:06:13.456Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EngineAPI.cpp",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\EngineDLL\\EngineAPI.cpp",
+              "RelativeDocumentMoniker": "EngineDLL\\EngineAPI.cpp",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\EngineDLL\\EngineAPI.cpp",
+              "RelativeToolTip": "EngineDLL\\EngineAPI.cpp",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-01-02T12:50:20.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "dllmain.cpp",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\EngineDLL\\dllmain.cpp",
+              "RelativeDocumentMoniker": "EngineDLL\\dllmain.cpp",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\EngineDLL\\dllmain.cpp",
+              "RelativeToolTip": "EngineDLL\\dllmain.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-01-02T12:40:41.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Main.cpp",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\EngineTest\\Main.cpp",
+              "RelativeDocumentMoniker": "EngineTest\\Main.cpp",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\EngineTest\\Main.cpp",
+              "RelativeToolTip": "EngineTest\\Main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-01-02T11:12:33.432Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Test.h",
               "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\EngineTest\\Test.h",
               "RelativeDocumentMoniker": "EngineTest\\Test.h",
@@ -104,20 +226,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Main.cpp",
-              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\EngineTest\\Main.cpp",
-              "RelativeDocumentMoniker": "EngineTest\\Main.cpp",
-              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\EngineTest\\Main.cpp",
-              "RelativeToolTip": "EngineTest\\Main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAIwBYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-01-02T11:12:33.432Z",
+              "DocumentIndex": 3,
+              "Title": "TestEntityComponents.h",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\EngineTest\\TestEntityComponents.h",
+              "RelativeDocumentMoniker": "EngineTest\\TestEntityComponents.h",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\EngineTest\\TestEntityComponents.h",
+              "RelativeToolTip": "EngineTest\\TestEntityComponents.h",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB4AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-02T11:20:16.163Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
+              "Title": "Microsoft.NET.EolTargetFrameworks.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\10.0.101\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.EolTargetFrameworks.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\10.0.101\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.EolTargetFrameworks.targets",
+              "ViewState": "AgIAABEAAAAAAAAAAAASwB8AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2026-01-02T12:47:57.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "Transform.cpp",
               "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Components\\Transform.cpp",
               "RelativeDocumentMoniker": "Engine\\Components\\Transform.cpp",
@@ -130,7 +263,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 13,
               "Title": "TransfromComponent.h",
               "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\EngineAPI\\TransfromComponent.h",
               "RelativeDocumentMoniker": "Engine\\EngineAPI\\TransfromComponent.h",
@@ -143,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 15,
               "Title": "GameEntity.h",
               "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\EngineAPI\\GameEntity.h",
               "RelativeDocumentMoniker": "Engine\\EngineAPI\\GameEntity.h",
@@ -156,7 +289,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "Transform.h",
               "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Components\\Transform.h",
               "RelativeDocumentMoniker": "Engine\\Components\\Transform.h",
@@ -169,7 +302,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
               "Title": "ComponentsCommon.h",
               "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Components\\ComponentsCommon.h",
               "RelativeDocumentMoniker": "Engine\\Components\\ComponentsCommon.h",
@@ -182,7 +315,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 16,
               "Title": "MathTypes.h",
               "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Util\\MathTypes.h",
               "RelativeDocumentMoniker": "Engine\\Util\\MathTypes.h",
@@ -195,7 +328,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 18,
               "Title": "Entity.cpp",
               "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Components\\Entity.cpp",
               "RelativeDocumentMoniker": "Engine\\Components\\Entity.cpp",
@@ -208,7 +341,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 17,
               "Title": "CommonHeaders.h",
               "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Common\\CommonHeaders.h",
               "RelativeDocumentMoniker": "Engine\\Common\\CommonHeaders.h",
@@ -221,7 +354,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 19,
               "Title": "Entity.h",
               "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Components\\Entity.h",
               "RelativeDocumentMoniker": "Engine\\Components\\Entity.h",
@@ -234,7 +367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 20,
               "Title": "Id.h",
               "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Common\\Id.h",
               "RelativeDocumentMoniker": "Engine\\Common\\Id.h",
@@ -247,7 +380,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 21,
               "Title": "Util.h",
               "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Util\\Util.h",
               "RelativeDocumentMoniker": "Engine\\Util\\Util.h",
@@ -260,7 +393,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 22,
               "Title": "PrimitiveTypes.h",
               "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Common\\PrimitiveTypes.h",
               "RelativeDocumentMoniker": "Engine\\Common\\PrimitiveTypes.h",

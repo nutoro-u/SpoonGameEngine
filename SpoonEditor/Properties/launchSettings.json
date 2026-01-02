@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SpoonEditor": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

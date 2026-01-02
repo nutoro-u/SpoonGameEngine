@@ -70,6 +70,10 @@ namespace SpoonEditor.GameProject
 				GameEntities = new ReadOnlyObservableCollection<GameEntity>(_gameEntities);
 				OnPropertyChanged(nameof(GameEntities));
 			}
+			foreach (var entity in _gameEntities)
+			{
+				entity.IsActive = IsActive;
+			}
 
 			AddGameEntityCommand = new RelayCommand<GameEntity>(x =>
 			{
@@ -78,7 +82,7 @@ namespace SpoonEditor.GameProject
 
 				Project.UndoRedo.Add(new UndoRedoAction(
 					() => RemoveGameEntity(x),
-					() => _gameEntities.Insert(entityIndex, x),
+					() => AddGameEntity(x, entityIndex),
 					$"Add {x.Name} to {Name}"));
 			});
 
@@ -88,20 +92,29 @@ namespace SpoonEditor.GameProject
 				RemoveGameEntity(x);
 
 				Project.UndoRedo.Add(new UndoRedoAction(
-					() => _gameEntities.Insert(entityIndex, x),
+					() => AddGameEntity(x, entityIndex),
 					() => RemoveGameEntity(x),
 					$"Remove {x.Name} from {Name}"));
 			});
 		}
 
-		private void AddGameEntity(GameEntity entity)
+		private void AddGameEntity(GameEntity entity, int index = -1)
 		{
 			Debug.Assert(!_gameEntities.Contains(entity));
-			_gameEntities.Add(entity);
+			entity.IsActive = IsActive;
+			if (index == -1)
+			{
+				_gameEntities.Add(entity);
+			}
+			else
+			{
+				_gameEntities.Insert(index, entity);
+			}
 		}
 		private void RemoveGameEntity(GameEntity entity)
 		{
 			Debug.Assert(_gameEntities.Contains(entity));
+			entity.IsActive = false;
 			_gameEntities.Remove(entity);
 		}
 	}

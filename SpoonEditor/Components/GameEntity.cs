@@ -97,7 +97,7 @@ namespace SpoonEditor.Components
 		[OnDeserialized]
 		private void OnDeserialized(StreamingContext context)
 		{
-			if (Components != null)
+			if (_components != null)
 			{
 				Components = new ReadOnlyObservableCollection<Component>(_components);
 				OnPropertyChanged(nameof(Components));

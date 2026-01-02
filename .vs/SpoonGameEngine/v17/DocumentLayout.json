@@ -1,7 +1,36 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{29BA4192-749C-4223-93BB-6B4D711593A5}|Engine\\Engine.vcxproj|E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Components\\Transform.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29BA4192-749C-4223-93BB-6B4D711593A5}|Engine\\Engine.vcxproj|solutionrelative:Engine\\Components\\Transform.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29BA4192-749C-4223-93BB-6B4D711593A5}|Engine\\Engine.vcxproj|E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Components\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29BA4192-749C-4223-93BB-6B4D711593A5}|Engine\\Engine.vcxproj|solutionrelative:Engine\\Components\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29BA4192-749C-4223-93BB-6B4D711593A5}|Engine\\Engine.vcxproj|E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Common\\Id.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29BA4192-749C-4223-93BB-6B4D711593A5}|Engine\\Engine.vcxproj|solutionrelative:Engine\\Common\\Id.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29BA4192-749C-4223-93BB-6B4D711593A5}|Engine\\Engine.vcxproj|E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Components\\ComponentsCommon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29BA4192-749C-4223-93BB-6B4D711593A5}|Engine\\Engine.vcxproj|solutionrelative:Engine\\Components\\ComponentsCommon.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29BA4192-749C-4223-93BB-6B4D711593A5}|Engine\\Engine.vcxproj|E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Components\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29BA4192-749C-4223-93BB-6B4D711593A5}|Engine\\Engine.vcxproj|solutionrelative:Engine\\Components\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29BA4192-749C-4223-93BB-6B4D711593A5}|Engine\\Engine.vcxproj|E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Common\\CommonHeaders.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29BA4192-749C-4223-93BB-6B4D711593A5}|Engine\\Engine.vcxproj|solutionrelative:Engine\\Common\\CommonHeaders.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29BA4192-749C-4223-93BB-6B4D711593A5}|Engine\\Engine.vcxproj|E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Common\\PrimitiveTypes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{29BA4192-749C-4223-93BB-6B4D711593A5}|Engine\\Engine.vcxproj|solutionrelative:Engine\\Common\\PrimitiveTypes.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +38,102 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Transform.h",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Components\\Transform.h",
+              "RelativeDocumentMoniker": "Engine\\Components\\Transform.h",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Components\\Transform.h",
+              "RelativeToolTip": "Engine\\Components\\Transform.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-02T07:41:02.159Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Entity.cpp",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Components\\Entity.cpp",
+              "RelativeDocumentMoniker": "Engine\\Components\\Entity.cpp",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Components\\Entity.cpp",
+              "RelativeToolTip": "Engine\\Components\\Entity.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-01-02T07:11:02.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ComponentsCommon.h",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Components\\ComponentsCommon.h",
+              "RelativeDocumentMoniker": "Engine\\Components\\ComponentsCommon.h",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Components\\ComponentsCommon.h",
+              "RelativeToolTip": "Engine\\Components\\ComponentsCommon.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-02T07:07:29.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Entity.h",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Components\\Entity.h",
+              "RelativeDocumentMoniker": "Engine\\Components\\Entity.h",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Components\\Entity.h",
+              "RelativeToolTip": "Engine\\Components\\Entity.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-02T07:06:09.406Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Id.h",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Common\\Id.h",
+              "RelativeDocumentMoniker": "Engine\\Common\\Id.h",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Common\\Id.h",
+              "RelativeToolTip": "Engine\\Common\\Id.h",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAACsAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-02T06:30:52.32Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PrimitiveTypes.h",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Common\\PrimitiveTypes.h",
+              "RelativeDocumentMoniker": "Engine\\Common\\PrimitiveTypes.h",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Common\\PrimitiveTypes.h",
+              "RelativeToolTip": "Engine\\Common\\PrimitiveTypes.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-02T05:50:51.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CommonHeaders.h",
+              "DocumentMoniker": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Common\\CommonHeaders.h",
+              "RelativeDocumentMoniker": "Engine\\Common\\CommonHeaders.h",
+              "ToolTip": "E:\\GD\\DX12\\solutions\\SpoonGameEngine\\Engine\\Common\\CommonHeaders.h",
+              "RelativeToolTip": "Engine\\Common\\CommonHeaders.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-02T05:47:18.219Z",
+              "EditorCaption": ""
             }
           ]
         }

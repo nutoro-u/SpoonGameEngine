@@ -3,6 +3,7 @@ using SpoonEditor.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace SpoonEditor
 {
@@ -22,8 +22,10 @@ namespace SpoonEditor
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
-        public MainWindow()
+	{
+		public static string SpoonPath { get; private set; } = @"E:\GD\DX12\solutions\SpoonGameEngine";
+
+		public MainWindow()
         {
             InitializeComponent();
 			Loaded += OnMainWindowLoaded;
@@ -39,7 +41,30 @@ namespace SpoonEditor
 		private void OnMainWindowLoaded(object sender, RoutedEventArgs e)
 		{
 			Loaded -= OnMainWindowLoaded;
+			GetEnginePath();
 			OpenProjectBrowserDialog();
+		}
+
+		private void GetEnginePath()
+		{
+			var spoonPath = Environment.GetEnvironmentVariable("SPOON_ENGINE", EnvironmentVariableTarget.User);
+			if (spoonPath == null || !Directory.Exists(Path.Combine(spoonPath, @"Engine\EngineAPI")))
+			{
+				var dlg = new EnginePathDialog();
+				if (dlg.ShowDialog() == true)
+				{
+					SpoonPath = dlg.SpoonPath;
+					Environment.SetEnvironmentVariable("SPOON_ENGINE", SpoonPath.ToUpper(), EnvironmentVariableTarget.User);
+				}
+				else
+				{
+					Application.Current.Shutdown();
+				}
+			}
+			else
+			{
+				SpoonPath = spoonPath;
+			}
 		}
 
 		private void OpenProjectBrowserDialog()

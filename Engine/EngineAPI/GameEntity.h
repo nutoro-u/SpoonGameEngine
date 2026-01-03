@@ -54,7 +54,7 @@ namespace spoon {
 #define REGISTER_SCRIPT(TYPE)                                           \
         class TYPE;                                                     \
         namespace {                                                     \
-        const u8 _reg##TYPE                                             \
+        const u8 _reg_##TYPE                                            \
         { spoon::script::detail::register_script(                       \
               spoon::script::detail::string_hash()(#TYPE),              \
               &spoon::script::detail::create_script<TYPE>) };           \

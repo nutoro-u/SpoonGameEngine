@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:SpoonEditor"
 		xmlns:editors="clr-namespace:SpoonEditor.Editors"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
-        Title="SpoonEditor" Height="800" Width="1422">
+        Title="SpoonEditor" Height="800" Width="1422"
+        Style="{StaticResource SpoonWindowStyle}">
 	<Grid>
 		<editors:WorldEditorView/>
 	</Grid>

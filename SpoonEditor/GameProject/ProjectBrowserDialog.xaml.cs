@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using System.Windows.Media.Animation;
 
 namespace SpoonEditor.GameProject
 {
@@ -18,6 +11,8 @@ namespace SpoonEditor.GameProject
 	/// </summary>
 	public partial class ProjectBrowserDialog : Window
 	{
+		private readonly CubicEase _easing = new CubicEase() { EasingMode = EasingMode.EaseInOut };
+
 		public ProjectBrowserDialog()
 		{
 			InitializeComponent();
@@ -28,7 +23,7 @@ namespace SpoonEditor.GameProject
 		private void OnLoaded(object sender, RoutedEventArgs e)
 		{
 			Loaded -= OnLoaded;
-			if(!OpenProject.Projects.Any())
+			if (!OpenProject.Projects.Any())
 			{
 				OpenProjectButton.IsEnabled = false;
 				openProjectView.Visibility = Visibility.Hidden;
@@ -43,7 +38,10 @@ namespace SpoonEditor.GameProject
 				if (NewProjectButton.IsChecked == true)
 				{
 					NewProjectButton.IsChecked = false;
-					BrowserContent.Margin = new Thickness(0);
+
+					AnimateToOpenProject();
+					openProjectView.IsEnabled = true;
+					newProjectView.IsEnabled = false;
 				}
 				OpenProjectButton.IsChecked = true;
 			}
@@ -52,10 +50,39 @@ namespace SpoonEditor.GameProject
 				if (OpenProjectButton.IsChecked == true)
 				{
 					OpenProjectButton.IsChecked = false;
-					BrowserContent.Margin = new Thickness(-800, 0, 0, 0);
+
+					AnimateToCreateProject();
+					openProjectView.IsEnabled = false;
+					newProjectView.IsEnabled = true;
 				}
 				NewProjectButton.IsChecked = true;
 			}
+		}
+
+		private void AnimateToCreateProject()
+		{
+			var highlightAnimation = new DoubleAnimation(200, 400, new Duration(TimeSpan.FromSeconds(0.2)));
+			highlightAnimation.EasingFunction = _easing;
+			highlightAnimation.Completed += (s, e) =>
+			{
+				var animation = new ThicknessAnimation(new Thickness(0), new Thickness(-1600, 0, 0, 0), new Duration(TimeSpan.FromSeconds(0.5)));
+				animation.EasingFunction = _easing;
+				BrowserContent.BeginAnimation(MarginProperty, animation);
+			};
+			highlightRect.BeginAnimation(Canvas.LeftProperty, highlightAnimation);
+		}
+
+		private void AnimateToOpenProject()
+		{
+			var highlightAnimation = new DoubleAnimation(400, 200, new Duration(TimeSpan.FromSeconds(0.2)));
+			highlightAnimation.EasingFunction = _easing;
+			highlightAnimation.Completed += (s, e) =>
+			{
+				var animation = new ThicknessAnimation(new Thickness(-1600, 0, 0, 0), new Thickness(0), new Duration(TimeSpan.FromSeconds(0.5)));
+				animation.EasingFunction = _easing;
+				BrowserContent.BeginAnimation(MarginProperty, animation);
+			};
+			highlightRect.BeginAnimation(Canvas.LeftProperty, highlightAnimation);
 		}
 	}
 }

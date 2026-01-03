@@ -42,9 +42,10 @@ namespace SpoonEditor.Components
 						EntityId = EngineAPI.CreateGameEntity(this);
 						Debug.Assert(ID.IsValid(_entityId));
 					}
-					else
+					else if (ID.IsValid(EntityId))
 					{
 						EngineAPI.RemoveGameEntity(this);
+						EntityId = ID.INVALID_ID;
 					}
 
 					OnPropertyChanged(nameof(IsActive));
@@ -52,24 +53,8 @@ namespace SpoonEditor.Components
 			}
 		}
 
-		private string _name;
-
-		[DataMember]
-		public string Name
-		{
-			get => _name;
-			set
-			{
-				if (_name != value)
-				{
-					_name = value;
-					OnPropertyChanged(nameof(Name));
-				}
-			}
-		}
 
 		private bool _isEnabled = true;
-
 		[DataMember]
 		public bool IsEnabled
 		{
@@ -80,6 +65,21 @@ namespace SpoonEditor.Components
 				{
 					_isEnabled = value;
 					OnPropertyChanged(nameof(IsEnabled));
+				}
+			}
+		}
+
+		private string _name;
+		[DataMember]
+		public string Name
+		{
+			get => _name;
+			set
+			{
+				if (_name != value)
+				{
+					_name = value;
+					OnPropertyChanged(nameof(Name));
 				}
 			}
 		}
@@ -95,7 +95,7 @@ namespace SpoonEditor.Components
 		public T GetComponent<T>() where T : Component => GetComponent(typeof(T)) as T;
 
 		[OnDeserialized]
-		private void OnDeserialized(StreamingContext context)
+		void OnDeserialized(StreamingContext context)
 		{
 			if (_components != null)
 			{
@@ -104,10 +104,10 @@ namespace SpoonEditor.Components
 			}
 		}
 
-		public GameEntity(Scene parentScene)
+		public GameEntity(Scene scene)
 		{
-			Debug.Assert(parentScene != null);
-			ParentScene = parentScene;
+			Debug.Assert(scene != null);
+			ParentScene = scene;
 			_components.Add(new Transform(this));
 			OnDeserialized(new StreamingContext());
 		}
@@ -115,10 +115,9 @@ namespace SpoonEditor.Components
 
 	abstract class MSEntity : ViewModelBase
 	{
+		// Enables updates to selected entities
 		private bool _enableUpdates = true;
-
 		private bool? _isEnabled;
-
 		public bool? IsEnabled
 		{
 			get => _isEnabled;
@@ -133,7 +132,6 @@ namespace SpoonEditor.Components
 		}
 
 		private string _name;
-
 		public string Name
 		{
 			get => _name;
@@ -150,21 +148,46 @@ namespace SpoonEditor.Components
 		private readonly ObservableCollection<IMSComponent> _components = new ObservableCollection<IMSComponent>();
 		public ReadOnlyObservableCollection<IMSComponent> Components { get; }
 
-		public List<GameEntity> SelectedEntities { get; }
-
-		public MSEntity(List<GameEntity> entities)
+		public T GetMSComponent<T>() where T : IMSComponent
 		{
-			Debug.Assert(entities?.Any() == true);
-			Components = new ReadOnlyObservableCollection<IMSComponent>(_components);
-			SelectedEntities = entities;
-			PropertyChanged += (s, e) => { if (_enableUpdates) UpdateGameEntities(e.PropertyName); };
+			return (T)Components.FirstOrDefault(x => x.GetType() == typeof(T));
 		}
 
-		public void Refresh()
+		public List<GameEntity> SelectedEntities { get; }
+
+		private void MakeComponentList()
 		{
-			_enableUpdates = false;
-			UpdateMSGameEntity();
-			_enableUpdates = true;
+			_components.Clear();
+			var firstEntity = SelectedEntities.FirstOrDefault();
+			if (firstEntity == null) return;
+
+			foreach (var component in firstEntity.Components)
+			{
+				var type = component.GetType();
+				if (!SelectedEntities.Skip(1).Any(entity => entity.GetComponent(type) == null))
+				{
+					Debug.Assert(Components.FirstOrDefault(x => x.GetType() == type) == null);
+					_components.Add(component.GetMultiselectionComponent(this));
+				}
+			}
+		}
+
+		public static float? GetMixedValue<T>(List<T> objects, Func<T, float> getProperty)
+		{
+			var value = getProperty(objects.First());
+			return objects.Skip(1).Any(x => !getProperty(x).IsTheSameAs(value)) ? (float?)null : value;
+		}
+
+		public static bool? GetMixedValue<T>(List<T> objects, Func<T, bool> getProperty)
+		{
+			var value = getProperty(objects.First());
+			return objects.Skip(1).Any(x => value != getProperty(x)) ? (bool?)null : value;
+		}
+
+		public static string GetMixedValue<T>(List<T> objects, Func<T, string> getProperty)
+		{
+			var value = getProperty(objects.First());
+			return objects.Skip(1).Any(x => value != getProperty(x)) ? null : value;
 		}
 
 		protected virtual bool UpdateGameEntities(string propertyName)
@@ -185,47 +208,20 @@ namespace SpoonEditor.Components
 			return true;
 		}
 
-		public static float? GetMixedValue(List<GameEntity> entities, Func<GameEntity, float> getProperty)
+		public void Refresh()
 		{
-			var value = getProperty(entities.First());
-
-			foreach (var entity in entities.Skip(1))
-			{
-				if (!value.IsSameAs(getProperty(entity)))
-				{
-					return null;
-				}
-			}
-
-			return value;
+			_enableUpdates = false;
+			UpdateMSGameEntity();
+			MakeComponentList();
+			_enableUpdates = true;
 		}
-		public static bool? GetMixedValue(List<GameEntity> entities, Func<GameEntity, bool> getProperty)
+
+		public MSEntity(List<GameEntity> entities)
 		{
-			var value = getProperty(entities.First());
-
-			foreach (var entity in entities.Skip(1))
-			{
-				if (value != getProperty(entity))
-				{
-					return null;
-				}
-			}
-
-			return value;
-		}
-		public static string GetMixedValue(List<GameEntity> entities, Func<GameEntity, string> getProperty)
-		{
-			var value = getProperty(entities.First());
-
-			foreach (var entity in entities.Skip(1))
-			{
-				if (value != getProperty(entity))
-				{
-					return null;
-				}
-			}
-
-			return value;
+			Debug.Assert(entities?.Any() == true);
+			Components = new ReadOnlyObservableCollection<IMSComponent>(_components);
+			SelectedEntities = entities;
+			PropertyChanged += (s, e) => { if (_enableUpdates) UpdateGameEntities(e.PropertyName); };
 		}
 	}
 

@@ -1,8 +1,8 @@
 #pragma once
 #include "ComponentsCommon.h"
 
-namespace spoon::transform
-{
+namespace spoon::transform {
+
 	struct init_info
 	{
 		f32 position[3]{};
@@ -10,6 +10,6 @@ namespace spoon::transform
 		f32 scale[3]{ 1.f, 1.f, 1.f };
 	};
 
-	component create_transform(const init_info& info, game_entity::entity entity);
-	void remove_transform(component c);
+	component create(init_info info, game_entity::entity entity);
+	void remove(component c);
 }

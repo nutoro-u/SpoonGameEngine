@@ -7,13 +7,17 @@
     <ClInclude Include="Components\Entity.h" />
     <ClInclude Include="Components\ComponentsCommon.h" />
     <ClInclude Include="Components\Transform.h" />
-    <ClInclude Include="Util\Util.h" />
+    <ClInclude Include="Utilities\Utilities.h" />
     <ClInclude Include="EngineAPI\GameEntity.h" />
     <ClInclude Include="EngineAPI\TransfromComponent.h" />
-    <ClInclude Include="Util\MathTypes.h" />
+    <ClInclude Include="Utilities\MathTypes.h" />
+    <ClInclude Include="Components\Script.h" />
+    <ClInclude Include="EngineAPI\ScriptComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Components\Entity.cpp" />
     <ClCompile Include="Components\Transform.cpp" />
+    <ClCompile Include="Core\Main.cpp" />
+    <ClCompile Include="Components\Script.cpp" />
   </ItemGroup>
 </Project>

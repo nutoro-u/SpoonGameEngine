@@ -50,7 +50,7 @@
 			<RowDefinition />
 		</Grid.RowDefinitions>
 		<Canvas x:Name="canvas">
-			<Rectangle Width="{Binding Path=ActualWidth, ElementName=createProjectButton}"
+			<Rectangle Width="{Binding Path=ActualWidth, ElementName=NewProjectButton}"
                        Height="{Binding Path=ActualHeight,ElementName=canvas}"
                        x:Name="highlightRect" Canvas.Left="200" Opacity="0.3">
 				<Rectangle.Effect>

@@ -1,19 +1,16 @@
-﻿using SpoonEditor.DllWrappers;
-using SpoonEditor;
+﻿using SpoonEditor.Components;
+using SpoonEditor.DllWrappers;
 using SpoonEditor.GameDev;
 using SpoonEditor.Utils;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using System.Xml.Serialization;
 
 namespace SpoonEditor.GameProject
 {
@@ -55,6 +52,21 @@ namespace SpoonEditor.GameProject
 
 		public BuildConfiguration StandAloneBuildConfig => BuildConfig == 0 ? BuildConfiguration.Debug : BuildConfiguration.Release;
 		public BuildConfiguration DllBuildConfig => BuildConfig == 0 ? BuildConfiguration.DebugEditor : BuildConfiguration.ReleaseEditor;
+
+		private string[] _availableScripts;
+		public string[] AvailableScripts
+		{
+			get => _availableScripts;
+			set
+			{
+				if (_availableScripts != value)
+				{
+					_availableScripts = value;
+					OnPropertyChanged(nameof(AvailableScripts));
+				}
+			}
+		}
+
 
 		[DataMember(Name = "Scenes")]
 		private ObservableCollection<Scene> _scenes = new ObservableCollection<Scene>();
@@ -147,6 +159,7 @@ namespace SpoonEditor.GameProject
 
 		public void Unload()
 		{
+			UnloadGameCodeDll();
 			VisualStudio.CloseVisualStudio();
 			UndoRedo.Reset();
 		}
@@ -179,8 +192,11 @@ namespace SpoonEditor.GameProject
 		{
 			var configName = GetConfigurationName(DllBuildConfig);
 			var dll = $@"{Path}x64\{configName}\{Name}.dll";
+			AvailableScripts = null;
 			if (File.Exists(dll) && EngineAPI.LoadGameCodeDll(dll) != 0)
 			{
+				AvailableScripts = EngineAPI.GetScriptNames();
+				ActiveScene.GameEntities.Where(x => x.GetComponent<Script>() != null).ToList().ForEach(x => x.IsActive = true);
 				Logger.Log(MessageType.Info, "Game code DLL loaded successfully.");
 			}
 			else
@@ -191,9 +207,11 @@ namespace SpoonEditor.GameProject
 
 		private void UnloadGameCodeDll()
 		{
+			ActiveScene.GameEntities.Where(x => x.GetComponent<Script>() != null).ToList().ForEach(x => x.IsActive = false);
 			if (EngineAPI.UnloadGameCodeDll() != 0)
 			{
 				Logger.Log(MessageType.Info, "Game code DLL unloaded");
+				AvailableScripts = null;
 			}
 		}
 
@@ -206,6 +224,7 @@ namespace SpoonEditor.GameProject
 				OnPropertyChanged(nameof(Scenes));
 			}
 			ActiveScene = Scenes.FirstOrDefault(x => x.IsActive);
+			Debug.Assert(ActiveScene != null);
 
 			await BuildGameCodeDll(false);
 

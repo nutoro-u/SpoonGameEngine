@@ -21,7 +21,19 @@ namespace spoon::script {
 			return reg;
 		}
 
-		bool 
+#ifdef USE_WITH_EDITOR
+		utl::vector<std::string>&
+			script_names()
+		{
+			// NOTE: we put this static variable in a function because of
+			//       the initialization order of static data. This way, we can
+			//       be certain that the data is initialized before accessing it.
+			static utl::vector<std::string> names;
+			return names;
+		}
+#endif
+
+		bool
 			exists(script_id id)
 		{
 			assert(id::is_valid(id));
@@ -43,6 +55,23 @@ namespace spoon::script {
 			assert(result);
 			return result;
 		}
+
+		script_creator
+			get_script_creator(size_t tag)
+		{
+			auto script = spoon::script::registry().find(tag);
+			assert(script != spoon::script::registry().end() && script->first == tag);
+			return script->second;
+		}
+
+#ifdef USE_WITH_EDITOR
+		u8
+			add_script_name(const char* name)
+		{
+			script_names().emplace_back(name);
+			return true;
+		}
+#endif // USE_WITH_EDITOR
 
 	} // namespace detail
 
@@ -71,7 +100,7 @@ namespace spoon::script {
 		assert(id::is_valid(id));
 		const id::id_type index{ (id::id_type)entity_scripts.size() };
 		entity_scripts.emplace_back(info.script_creator(entity));
-		assert(entity_scripts.back()->get_id() == entity.get_id());		
+		assert(entity_scripts.back()->get_id() == entity.get_id());
 		id_mapping[id::index(id)] = index;
 		return component{ id };
 	}
@@ -88,3 +117,21 @@ namespace spoon::script {
 		id_mapping[id::index(id)] = id::invalid_id;
 	}
 }
+
+#ifdef USE_WITH_EDITOR
+#include <atlsafe.h>
+
+extern "C" __declspec(dllexport)
+LPSAFEARRAY
+get_script_names()
+{
+	const u32 size{ (u32)spoon::script::script_names().size() };
+	if (!size) return nullptr;
+	CComSafeArray<BSTR> names(size);
+	for (u32 i{ 0 }; i < size; ++i)
+	{
+		names.SetAt(i, A2BSTR_EX(spoon::script::script_names()[i].c_str()), false);
+	}
+	return names.Detach();
+}
+#endif // USE_WITH_EDITOR

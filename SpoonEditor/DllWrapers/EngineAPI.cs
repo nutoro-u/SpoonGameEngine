@@ -1,9 +1,11 @@
-﻿// Copyright (c) Arash Khatami
-// Distributed under the MIT license. See the LICENSE file in the project root for more information.
-using SpoonEditor.Components;
+﻿using SpoonEditor.Components;
+using SpoonEditor.Utils;
 using SpoonEditor.EngineAPIStructs;
+using System;
+using System.Linq;
 using System.Numerics;
 using System.Runtime.InteropServices;
+using SpoonEditor.GameProject;
 
 namespace SpoonEditor.EngineAPIStructs
 {
@@ -16,9 +18,16 @@ namespace SpoonEditor.EngineAPIStructs
 	}
 
 	[StructLayout(LayoutKind.Sequential)]
+	class ScriptComponent
+	{
+		public IntPtr ScriptCreator;
+	}
+
+	[StructLayout(LayoutKind.Sequential)]
 	class GameEntityDescriptor
 	{
 		public TransformComponent Transform = new TransformComponent();
+		public ScriptComponent Script = new ScriptComponent();
 	}
 }
 
@@ -31,7 +40,11 @@ namespace SpoonEditor.DllWrappers
 		public static extern int LoadGameCodeDll(string dllPath);
 		[DllImport(_engineDll)]
 		public static extern int UnloadGameCodeDll();
-
+		[DllImport(_engineDll)]
+		public static extern IntPtr GetScriptCreator(string name);
+		[DllImport(_engineDll)]
+		[return: MarshalAs(UnmanagedType.SafeArray)]
+		public static extern string[] GetScriptNames();
 		internal static class EntityAPI
 		{
 			[DllImport(_engineDll)]
@@ -47,7 +60,24 @@ namespace SpoonEditor.DllWrappers
 					desc.Transform.Rotation = c.Rotation;
 					desc.Transform.Scale = c.Scale;
 				}
-
+				// script component
+				{
+					// NOTE: here we also check if current project is not null, so we can tell whether the game code DLL
+					//       has been loaded or not. This way, creation of entities with a script component is deferred
+					//       until the DLL has been loaded.
+					var c = entity.GetComponent<Script>();
+					if (c != null && Project.Current != null)
+					{
+						if (Project.Current.AvailableScripts.Contains(c.Name))
+						{
+							desc.Script.ScriptCreator = GetScriptCreator(c.Name);
+						}
+						else
+						{
+							Logger.Log(MessageType.Error, $"Unable to find script with name {c.Name}. Game entity will be created without script component!");
+						}
+					}
+				}
 				return CreateGameEntity(desc);
 			}
 

@@ -3,59 +3,65 @@ using SpoonEditor.GameProject;
 using SpoonEditor.Utils;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace SpoonEditor.Editors
 {
+	public class NullableBoolToBoolConverter : IValueConverter
+	{
+		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+		{
+			return value is bool b && b == true;
+		}
+
+		public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+		{
+			return value is bool b && b == true;
+		}
+	}
 	/// <summary>
 	/// Interaction logic for GameEntityView.xaml
 	/// </summary>
 	public partial class GameEntityView : UserControl
 	{
-		private string _propertyName;
 		private Action _undoAction;
-
+		private string _propertyName;
 		public static GameEntityView Instance { get; private set; }
-
 		public GameEntityView()
 		{
 			InitializeComponent();
 			DataContext = null;
 			Instance = this;
-
 			DataContextChanged += (_, __) =>
 			{
-				if(DataContext != null)
+				if (DataContext != null)
 				{
-					(DataContext as MSEntity).PropertyChanged += (s,e) => _propertyName = e.PropertyName;
+					(DataContext as MSEntity).PropertyChanged += (s, e) => _propertyName = e.PropertyName;
 				}
 			};
 		}
 
 		private Action GetRenameAction()
 		{
-			MSEntity msEntity = DataContext as MSEntity;
-			var selection = msEntity.SelectedEntities.Select(entity => (entity, entity.Name)).ToList();
+			var vm = DataContext as MSEntity;
+			var selection = vm.SelectedEntities.Select(entity => (entity, entity.Name)).ToList();
 			return new Action(() =>
 			{
 				selection.ForEach(item => item.entity.Name = item.Name);
 				(DataContext as MSEntity).Refresh();
 			});
 		}
-		private Action GetEnableAction()
+
+		private Action GetIsEnabledAction()
 		{
-			MSEntity msEntity = DataContext as MSEntity;
-			var selection = msEntity.SelectedEntities.Select(entity => (entity, entity.IsEnabled)).ToList();
+			var vm = DataContext as MSEntity;
+			var selection = vm.SelectedEntities.Select(entity => (entity, entity.IsEnabled)).ToList();
 			return new Action(() =>
 			{
 				selection.ForEach(item => item.entity.IsEnabled = item.IsEnabled);
@@ -63,32 +69,80 @@ namespace SpoonEditor.Editors
 			});
 		}
 
-		private void OnNameTextBoxGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+		private void OnName_TextBox_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
 		{
 			_propertyName = string.Empty;
 			_undoAction = GetRenameAction();
 		}
 
-		private void OnNameTextBoxLostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+		private void OnName_TextBox_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
 		{
-			if(_propertyName == nameof(MSEntity.Name) && _undoAction != null)
+			if (_propertyName == nameof(MSEntity.Name) && _undoAction != null)
 			{
-				Action redoAction = GetRenameAction();
+				var redoAction = GetRenameAction();
 				Project.UndoRedo.Add(new UndoRedoAction(_undoAction, redoAction, "Rename game entity"));
 				_propertyName = null;
 			}
 			_undoAction = null;
 		}
 
-		private void OnIsEnabledClick(object sender, RoutedEventArgs e)
+		private void OnIsEnabled_CheckBox_Click(object sender, RoutedEventArgs e)
 		{
-			var undoAction = GetEnableAction();
-			MSEntity msEntity = DataContext as MSEntity;
-			msEntity.IsEnabled = (sender as CheckBox).IsChecked == true;
-
-			var redoAction = GetEnableAction();
+			var undoAction = GetIsEnabledAction();
+			var vm = DataContext as MSEntity;
+			vm.IsEnabled = (sender as CheckBox).IsChecked == true;
+			var redoAction = GetIsEnabledAction();
 			Project.UndoRedo.Add(new UndoRedoAction(undoAction, redoAction,
-				msEntity.IsEnabled == true ? "Enable game entity" : "Disable game entity"));
+				vm.IsEnabled == true ? "Enable game entity" : "Disable game entity"));
+		}
+
+		private void OnAddComponent_Button_PreviewMouse_LBD(object sender, MouseButtonEventArgs e)
+		{
+			var menu = FindResource("addComponentMenu") as ContextMenu;
+			var btn = sender as ToggleButton;
+			btn.IsChecked = true;
+			menu.Placement = PlacementMode.Bottom;
+			menu.PlacementTarget = btn;
+			menu.MinWidth = btn.ActualWidth;
+			menu.IsOpen = true;
+		}
+
+		private void AddComponent(ComponentType componentType, object data)
+		{
+			var creationFunction = ComponentFactory.GetCreationFunction(componentType);
+			var chandedEntities = new List<(GameEntity entity, Component component)>();
+			var vm = DataContext as MSEntity;
+			foreach (var entity in vm.SelectedEntities)
+			{
+				var component = creationFunction(entity, data);
+				if (entity.AddComponent(component))
+				{
+					chandedEntities.Add((entity, component));
+				}
+			}
+
+			if (chandedEntities.Any())
+			{
+				vm.Refresh();
+
+				Project.UndoRedo.Add(new UndoRedoAction(
+				() =>
+				{
+					chandedEntities.ForEach(x => x.entity.RemoveComponent(x.component));
+					(DataContext as MSEntity).Refresh();
+				},
+				() =>
+				{
+					chandedEntities.ForEach(x => x.entity.AddComponent(x.component));
+					(DataContext as MSEntity).Refresh();
+				},
+				$"Add {componentType} component"));
+			}
+		}
+
+		private void OnAddScriptComponent(object sender, RoutedEventArgs e)
+		{
+			AddComponent(ComponentType.Script, (sender as MenuItem).Header.ToString());
 		}
 	}
 }

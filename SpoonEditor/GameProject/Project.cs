@@ -1,4 +1,5 @@
-﻿using SpoonEditor.Utils;
+﻿using SpoonEditor.GameDev;
+using SpoonEditor.Utils;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -20,7 +21,8 @@ namespace SpoonEditor.GameProject
 
 		[DataMember]
 		public string Path { get; private set; }
-		public string FullPath => $@"{Path}{Name}\{Name}{Cts.ProjectExtension}";
+		public string FullPath => $@"{Path}{Name}{Cts.ProjectExtension}";
+		public string Solution => $@"{Path}{Name}.sln";
 
 		[DataMember(Name = Cts.Scenes)]
 		private ObservableCollection<Scene> _scenes = new ObservableCollection<Scene>();
@@ -111,6 +113,7 @@ namespace SpoonEditor.GameProject
 
 		public void Unload()
 		{
+			VisualStudio.CloseVisualStudio();
 			UndoRedo.Reset();
 		}
 

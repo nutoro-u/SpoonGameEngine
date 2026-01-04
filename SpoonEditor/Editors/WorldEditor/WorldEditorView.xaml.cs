@@ -1,4 +1,5 @@
-﻿using SpoonEditor.GameProject;
+﻿using SpoonEditor.GameDev;
+using SpoonEditor.GameProject;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -30,6 +31,11 @@ namespace SpoonEditor.Editors
 		{
 			Loaded -= OnWorldEditorViewLoaded;
 			Focus();
+		}
+
+		private void OnNewScript_Button_Click(object sender, RoutedEventArgs e)
+		{
+			new NewScriptDialog().ShowDialog();
 		}
 	}
 }

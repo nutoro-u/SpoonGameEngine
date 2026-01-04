@@ -23,8 +23,8 @@ namespace SpoonEditor.GameProject
 
 		public byte[] Icon { get; set; }
 		public byte[] Screenshot { get; set; }
-		public string IconFilepath { get; set; }
-		public string ScreenshotFilepath { get; set; }
+		public string IconFilePath { get; set; }
+		public string ScreenshotFilePath { get; set; }
 		public string ProjectFilePath { get; set; }
 		public string TemplatePath { get; set; }
 	}
@@ -155,11 +155,11 @@ namespace SpoonEditor.GameProject
 				}
 				DirectoryInfo dirIfo = new DirectoryInfo(path + Cts.ProjectHiddenFolderName);
 				dirIfo.Attributes |= FileAttributes.Hidden;
-				File.Copy(template.IconFilepath, Path.GetFullPath(Path.Combine(dirIfo.FullName, Cts.IconFileName)));
-				File.Copy(template.ScreenshotFilepath, Path.GetFullPath(Path.Combine(dirIfo.FullName, Cts.ScreenshotFileName)));
+				File.Copy(template.IconFilePath, Path.GetFullPath(Path.Combine(dirIfo.FullName, Cts.IconFileName)));
+				File.Copy(template.ScreenshotFilePath, Path.GetFullPath(Path.Combine(dirIfo.FullName, Cts.ScreenshotFileName)));
 
 				string projectXml = File.ReadAllText(template.ProjectFilePath);
-				projectXml = string.Format(projectXml, ProjectName, ProjectPath);
+				projectXml = string.Format(projectXml, ProjectName, path);
 				string projectPath = Path.GetFullPath(Path.Combine(path, $"{ProjectName}{Cts.ProjectExtension}"));
 				File.WriteAllText(projectPath, projectXml);
 				CreateMSVCSolution(template, path);
@@ -205,12 +205,13 @@ namespace SpoonEditor.GameProject
 				foreach (string file in templateFiles)
 				{
 					ProjectTemplate template = Serializer.FromFile<ProjectTemplate>(file);
-					template.IconFilepath = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(file), Cts.IconFileName));
-					template.Icon = File.ReadAllBytes(template.IconFilepath);
-					template.ScreenshotFilepath = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(file), Cts.ScreenshotFileName));
-					template.Screenshot = File.ReadAllBytes(template.ScreenshotFilepath);
+					template.TemplatePath = Path.GetDirectoryName(file);
+					template.IconFilePath = Path.GetFullPath(Path.Combine(template.TemplatePath, "Icon.png"));
+					template.Icon = File.ReadAllBytes(template.IconFilePath);
+					template.ScreenshotFilePath = Path.GetFullPath(Path.Combine(template.TemplatePath, "Screenshot.png"));
+					template.Screenshot = File.ReadAllBytes(template.ScreenshotFilePath);
+					template.ProjectFilePath = Path.GetFullPath(Path.Combine(template.TemplatePath, template.ProjectFile));
 
-					template.ProjectFilePath = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(file), template.ProjectFile));
 					_projectTemplates.Add(template);
 				}
 				ValidateProjectPath();

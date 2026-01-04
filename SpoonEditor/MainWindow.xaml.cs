@@ -23,7 +23,7 @@ namespace SpoonEditor
     /// </summary>
     public partial class MainWindow : Window
 	{
-		public static string SpoonPath { get; private set; } = @"E:\GD\DX12\solutions\SpoonGameEngine";
+		public static string SpoonPath { get; private set; }
 
 		public MainWindow()
         {

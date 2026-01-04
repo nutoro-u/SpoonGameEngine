@@ -70,15 +70,15 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros">
-    <Primal_IncludePath>{2}</Primal_IncludePath>
-	<Primal_LibraryPath>{3}$(Platform)\$(Configuration)\</Primal_LibraryPath>
+    <Spoon_IncludePath>{2}</Spoon_IncludePath>
+	<Spoon_LibraryPath>{3}$(Platform)\$(Configuration)\</Spoon_LibraryPath>
   </PropertyGroup>
   <ItemGroup>
-    <BuildMacro Include="Primal_IncludePath">
-	  <Value>$(Primal_IncludePath)</Value>
+    <BuildMacro Include="Spoon_IncludePath">
+	  <Value>$(Spoon_IncludePath)</Value>
 	</BuildMacro>
-	<BuildMacro Include="Primal_LibraryPath">
-	  <Value>$(Primal_LibraryPath)</Value>
+	<BuildMacro Include="Spoon_LibraryPath">
+	  <Value>$(Spoon_LibraryPath)</Value>
 	</BuildMacro>
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -99,14 +99,14 @@
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
 	  <RuntimeTypeInfo>false</RuntimeTypeInfo>
-      <AdditionalIncludeDirectories>$(Primal_IncludePath)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(Spoon_IncludePath)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>GameEntity.h</ForcedIncludeFiles>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(Primal_LibraryPath)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(Spoon_LibraryPath)</AdditionalLibraryDirectories>
       <AdditionalDependencies>Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -116,14 +116,14 @@
       <PreprocessorDefinitions>_DEBUG;USE_WITH_EDITOR;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
 	  <RuntimeTypeInfo>false</RuntimeTypeInfo>
-      <AdditionalIncludeDirectories>$(Primal_IncludePath)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(Spoon_IncludePath)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>GameEntity.h</ForcedIncludeFiles>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(Primal_LibraryPath)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(Spoon_LibraryPath)</AdditionalLibraryDirectories>
       <AdditionalDependencies>Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -135,7 +135,7 @@
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
 	  <RuntimeTypeInfo>false</RuntimeTypeInfo>
-      <AdditionalIncludeDirectories>$(Primal_IncludePath)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(Spoon_IncludePath)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>GameEntity.h</ForcedIncludeFiles>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
@@ -144,7 +144,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(Primal_LibraryPath)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(Spoon_LibraryPath)</AdditionalLibraryDirectories>
       <AdditionalDependencies>Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -156,7 +156,7 @@
       <PreprocessorDefinitions>NDEBUG;USE_WITH_EDITOR;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
 	  <RuntimeTypeInfo>false</RuntimeTypeInfo>
-      <AdditionalIncludeDirectories>$(Primal_IncludePath)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(Spoon_IncludePath)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>GameEntity.h</ForcedIncludeFiles>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
@@ -165,7 +165,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(Primal_LibraryPath)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(Spoon_LibraryPath)</AdditionalLibraryDirectories>
       <AdditionalDependencies>Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

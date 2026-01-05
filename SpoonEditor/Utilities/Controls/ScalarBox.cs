@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace SpoonEditor.Utils.Controls
+namespace SpoonEditor.Utilities.Controls
 {
 	class ScalarBox : NumberBox
 	{

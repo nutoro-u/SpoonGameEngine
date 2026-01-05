@@ -1,7 +1,7 @@
 ﻿using SpoonEditor.Components;
 using SpoonEditor.DllWrappers;
 using SpoonEditor.GameDev;
-using SpoonEditor.Utils;
+using SpoonEditor.Utilities;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;

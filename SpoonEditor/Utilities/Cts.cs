@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SpoonEditor.Utils
+namespace SpoonEditor.Utilities
 {
 	public static class Cts
 	{

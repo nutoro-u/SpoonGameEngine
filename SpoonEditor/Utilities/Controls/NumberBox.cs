@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace SpoonEditor.Utils.Controls
+namespace SpoonEditor.Utilities.Controls
 {
 	[TemplatePart(Name = "PART_textBlock", Type = typeof(TextBlock))]
 	[TemplatePart(Name = "PART_textBox", Type = typeof(TextBox))]

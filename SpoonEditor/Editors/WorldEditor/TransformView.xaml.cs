@@ -1,6 +1,6 @@
 ﻿using SpoonEditor.Components;
 using SpoonEditor.GameProject;
-using SpoonEditor.Utils;
+using SpoonEditor.Utilities;
 using System;
 using System.Diagnostics;
 using System.Linq;

@@ -1,5 +1,5 @@
 ﻿using SpoonEditor.Components;
-using SpoonEditor.Utils;
+using SpoonEditor.Utilities;
 using SpoonEditor.EngineAPIStructs;
 using System;
 using System.Linq;
@@ -45,6 +45,15 @@ namespace SpoonEditor.DllWrappers
 		[DllImport(_engineDll)]
 		[return: MarshalAs(UnmanagedType.SafeArray)]
 		public static extern string[] GetScriptNames();
+		[DllImport(_engineDll)]
+		public static extern int CreateRenderSurface(IntPtr host, int width, int height);
+		[DllImport(_engineDll)]
+		public static extern int RemoveRenderSurface(int surfaceId);
+		[DllImport(_engineDll)]
+		public static extern IntPtr GetWindowHandle(int surfaceId);
+		[DllImport(_engineDll)]
+		public static extern int ResizeRenderSurface(int surfaceId);
+
 		internal static class EntityAPI
 		{
 			[DllImport(_engineDll)]

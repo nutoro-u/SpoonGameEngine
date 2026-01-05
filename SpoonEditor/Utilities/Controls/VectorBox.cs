@@ -4,7 +4,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace SpoonEditor.Utils.Controls
+namespace SpoonEditor.Utilities.Controls
 {
 	public enum VectorType
 	{

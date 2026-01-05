@@ -1,5 +1,5 @@
 ﻿using SpoonEditor.Components;
-using SpoonEditor.Utils;
+using SpoonEditor.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

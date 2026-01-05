@@ -35,10 +35,13 @@
     <Compile Update="GameProject\ProjectBrowserDialog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Utils\LoggerView.xaml.cs">
+    <Compile Update="Utilities\LoggerView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Utils\UndoRedoView.xaml.cs">
+    <Compile Update="Utilities\RenderSurface\RenderSurfaceView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Utilities\UndoRedoView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

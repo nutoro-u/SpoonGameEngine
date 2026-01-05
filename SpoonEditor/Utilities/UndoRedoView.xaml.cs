@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SpoonEditor.Utils
+namespace SpoonEditor.Utilities
 {
     /// <summary>
     /// Interaction logic for UndoRedoView.xaml

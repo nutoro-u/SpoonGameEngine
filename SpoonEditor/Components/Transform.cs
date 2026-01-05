@@ -1,4 +1,4 @@
-﻿using SpoonEditor.Utils;
+﻿using SpoonEditor.Utilities;
 using System;
 using System.IO;
 using System.Numerics;

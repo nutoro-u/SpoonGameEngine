@@ -1,6 +1,6 @@
 ﻿using SpoonEditor.DllWrappers;
 using SpoonEditor.GameProject;
-using SpoonEditor.Utils;
+using SpoonEditor.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

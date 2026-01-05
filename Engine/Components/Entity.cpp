@@ -83,7 +83,6 @@ namespace spoon::game_entity {
 		assert(id::is_valid(id));
 		const id::id_type index{ id::index(id) };
 		assert(index < generations.size());
-		assert(generations[index] == id::generation(id));
 		return (generations[index] == id::generation(id) && transforms[index].is_valid());
 	}
 

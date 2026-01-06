@@ -1,5 +1,6 @@
 ﻿using SpoonEditor.ContentToolsAPIStructs;
 using SpoonEditor.DllWrappers;
+using SpoonEditor.Editors;
 using SpoonEditor.Utilities.Controls;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+
 
 namespace SpoonEditor.Content
 {

@@ -12,7 +12,7 @@ namespace SpoonEditor.Content
 		Audio,
 		Material,
 		Mesh,
-		Sleleton,
+		Skeleton,
 		Texture,
 	}
 

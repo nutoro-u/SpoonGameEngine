@@ -1,4 +1,5 @@
-﻿using SpoonEditor.GameDev;
+﻿using SpoonEditor.Content;
+using SpoonEditor.GameDev;
 using SpoonEditor.GameProject;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,12 @@ namespace SpoonEditor.Editors
 		private void OnNewScript_Button_Click(object sender, RoutedEventArgs e)
 		{
 			new NewScriptDialog().ShowDialog();
+		}
+
+		private void OnCreatePrimitiveMesh_Button_Click(object sender, RoutedEventArgs e)
+		{
+			var dlg = new PrimitiveMeshDialog();
+			dlg.ShowDialog();
 		}
 	}
 }

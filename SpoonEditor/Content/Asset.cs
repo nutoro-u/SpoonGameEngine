@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Text;
+
+namespace SpoonEditor.Content
+{
+	enum AssetType
+	{
+		Unknown,
+		Animation,
+		Audio,
+		Material,
+		Mesh,
+		Sleleton,
+		Texture,
+	}
+
+	abstract class Asset : ViewModelBase
+	{
+		public AssetType Type { get; private set; }
+
+		public Asset(AssetType type)
+		{
+			Debug.Assert(type != AssetType.Unknown);
+			Type = type;
+		}
+	}
+}

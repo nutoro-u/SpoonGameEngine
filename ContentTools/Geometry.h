@@ -15,7 +15,7 @@ namespace spoon::tools {
 			math::v2    uv;
 		};
 
-	} // namespace packe_vertex
+	} // namespace packed_vertex
 
 	struct vertex
 	{
@@ -30,7 +30,7 @@ namespace spoon::tools {
 		// Initial data
 		utl::vector<math::v3>               positions;
 		utl::vector<math::v3>               normals;
-		utl::vector<math::v3>               tangents;
+		utl::vector<math::v4>               tangents;
 		utl::vector<utl::vector<math::v2>>  uv_sets;
 
 		utl::vector<u32>                    raw_indices;

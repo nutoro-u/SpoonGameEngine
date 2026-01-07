@@ -31,8 +31,16 @@ namespace spoon::graphics {
 		return set_platform_interface(platform) && gfx.initialize();
 	}
 
-	void shutdown()
+	void
+		shutdown()
 	{
 		gfx.shutdown();
 	}
+	
+	void
+		render()
+	{
+		gfx.render();
+	}
+
 }

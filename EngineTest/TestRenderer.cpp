@@ -2,6 +2,7 @@
 #include "..\Platform\Platform.h"
 #include "..\Graphics\Renderer.h"
 #include "TestRenderer.h"
+#ifdef TEST_RENDERER
 
 using namespace spoon;
 
@@ -78,6 +79,7 @@ void
 engine_test::run()
 {
 	std::this_thread::sleep_for(std::chrono::milliseconds(10));
+	graphics::render();
 }
 
 void
@@ -88,3 +90,5 @@ engine_test::shutdown()
 
 	graphics::shutdown();
 }
+
+#endif // TEST_RENDERER

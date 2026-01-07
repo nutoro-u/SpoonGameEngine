@@ -10,6 +10,7 @@ namespace spoon::graphics::d3d12 {
 	{
 		pi.initialize = core::initialize;
 		pi.shutdown = core::shutdown;
+		pi.render = core::render;
 	}
 
 }

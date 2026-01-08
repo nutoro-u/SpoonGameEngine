@@ -1,11 +1,10 @@
 #pragma once
 
-#define USE_STL_VECTOR 1
+#define USE_STL_VECTOR 0
 #define USE_STL_DEQUE 1
 
 #if USE_STL_VECTOR
 #include <vector>
-#include <algorithm> // For std::iter_swap
 namespace spoon::utl {
 	template<typename T>
 	using vector = std::vector<T>;
@@ -24,6 +23,17 @@ namespace spoon::utl {
 		}
 	}
 }
+#else
+#include "Vector.h"
+
+namespace spoon::utl {
+	template<typename T>
+	void erase_unordered(vector<T>& v, size_t index)
+	{
+		v.erase_unordered(index);
+	}
+}
+
 #endif
 
 #if USE_STL_DEQUE
@@ -40,3 +50,5 @@ namespace spoon::utl {
 	// TODO: implement our own containers
 
 }
+
+#include "FreeList.h

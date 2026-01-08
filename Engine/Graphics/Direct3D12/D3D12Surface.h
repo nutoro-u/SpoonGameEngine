@@ -38,7 +38,9 @@ namespace spoon::graphics::d3d12 {
 
 			return *this;
 		}
-#endif
+#else
+		DISABLE_COPY_AND_MOVE(d3d12_surface);
+#endif // USE_STL_VECTOR
 		~d3d12_surface() { release(); }
 
 		void create_swap_chain(IDXGIFactory7* factory, ID3D12CommandQueue* cmd_queue, DXGI_FORMAT format);
@@ -88,7 +90,7 @@ namespace spoon::graphics::d3d12 {
 			_viewport = {};
 			_scissor_rect = {};
 		}
-#endif
+#endif // USE_STL_VECTOR
 
 		struct render_target_data
 		{

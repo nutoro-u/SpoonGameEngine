@@ -2,7 +2,7 @@
 #include "..\Platform\Platform.h"
 #include "..\Graphics\Renderer.h"
 #include "TestRenderer.h"
-#ifdef TEST_RENDERER
+#if TEST_RENDERER
 
 using namespace spoon;
 

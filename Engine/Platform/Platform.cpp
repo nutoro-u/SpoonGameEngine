@@ -190,7 +190,7 @@ namespace spoon::platform {
 		wc.hCursor = LoadCursor(NULL, IDC_ARROW);
 		wc.hbrBackground = CreateSolidBrush(RGB(26, 48, 76));
 		wc.lpszMenuName = NULL;
-		wc.lpszClassName = L"PrimalWindow";
+		wc.lpszClassName = L"SpoonWindow";
 		wc.hIconSm = LoadIcon(NULL, IDI_APPLICATION);
 
 		// Register the window class
@@ -206,7 +206,7 @@ namespace spoon::platform {
 		// adjust the window size for correct device size
 		AdjustWindowRect(&rect, info.style, FALSE);
 
-		const wchar_t* caption{ (init_info && init_info->caption) ? init_info->caption : L"Primal Game" };
+		const wchar_t* caption{ (init_info && init_info->caption) ? init_info->caption : L"Spoon Game" };
 		const s32 left{ init_info ? init_info->left : info.top_left.x };
 		const s32 top{ init_info ? init_info->top : info.top_left.y };
 		const s32 width{ rect.right - rect.left };

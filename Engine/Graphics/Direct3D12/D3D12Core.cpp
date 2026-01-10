@@ -2,6 +2,7 @@
 #include "D3D12Surface.h"
 #include "D3D12Shaders.h"
 #include "D3D12GPass.h"
+#include "D3D12PostProcess.h"
 
 using namespace Microsoft::WRL;
 

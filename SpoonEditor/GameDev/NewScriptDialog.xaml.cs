@@ -1,4 +1,5 @@
-﻿using SpoonEditor.GameProject;
+﻿using SpoonEditor.GameDev;
+using SpoonEditor.GameProject;
 using SpoonEditor.Utilities;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.IO;
 using System.IO.Packaging;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,7 +22,7 @@ using System.Windows.Media.Imaging;
 namespace SpoonEditor.GameDev
 {
 	/// <summary>
-	/// Interaction logic for NewScriptDialog.xaml
+	/// Interaction logic for NewScriptDialoq.xaml
 	/// </summary>
 	public partial class NewScriptDialog : Window
 	{
@@ -61,8 +63,10 @@ private:
 
 		private static string GetNamespaceFromProjectName()
 		{
-			var projectName = Project.Current.Name;
-			projectName = projectName.Replace(' ', '_');
+			var projectName = Project.Current.Name.Trim();
+			if (string.IsNullOrEmpty(projectName)) return string.Empty;
+			projectName = Regex.Replace(projectName, @"[^A-Za-z0-9_]", "");
+
 			return projectName;
 		}
 
@@ -72,11 +76,13 @@ private:
 			var name = scriptName.Text.Trim();
 			var path = scriptPath.Text.Trim();
 			string errorMsg = string.Empty;
+			var nameRegex = new Regex(@"[^A-Za-z0-9_]");
+
 			if (string.IsNullOrEmpty(name))
 			{
 				errorMsg = "Type in a script name.";
 			}
-			else if (name.IndexOfAny(Path.GetInvalidFileNameChars()) != -1 || name.Any(x => char.IsWhiteSpace(x)))
+			else if (nameRegex.IsMatch(name))
 			{
 				errorMsg = "Invalid character(s) used in script name.";
 			}

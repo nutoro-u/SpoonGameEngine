@@ -88,12 +88,12 @@
 			</Rectangle.Fill>
 		</Rectangle>
 		<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-			<ToggleButton Content="OPEN PROJECT" x:Name="OpenProjectButton" Margin="10,20,0,20"
+			<ToggleButton Content="OPEN PROJECT" x:Name="openProjectButton" Margin="10,20,0,20"
                           Click="OnToggleButtonClick" IsChecked="True"/>
-			<ToggleButton Content="CREATE PROJECT" x:Name="NewProjectButton" Margin="40,20,0,20"
+			<ToggleButton Content="CREATE PROJECT" x:Name="createProjectButton" Margin="40,20,0,20"
                           Click="OnToggleButtonClick" IsChecked="False"/>
 		</StackPanel>
-		<StackPanel Orientation="Horizontal" Grid.Row="1" x:Name="BrowserContent">
+		<StackPanel Orientation="Horizontal" Grid.Row="1" x:Name="browserContent">
 			<StackPanel.Effect>
 				<DropShadowEffect Opacity="0.6" BlurRadius="15" ShadowDepth="2"/>
 			</StackPanel.Effect>

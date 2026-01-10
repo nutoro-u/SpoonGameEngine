@@ -13,50 +13,29 @@ namespace SpoonEditor.GameProject
 	{
 		private readonly CubicEase _easing = new CubicEase() { EasingMode = EasingMode.EaseInOut };
 
+		public static bool GotoNewProjectTab { get; set; }
+
 		public ProjectBrowserDialog()
 		{
 			InitializeComponent();
-
-			Loaded += OnLoaded;
+			Loaded += OnProjectBrowserDialogLoaded;
 		}
 
-		private void OnLoaded(object sender, RoutedEventArgs e)
+		private void OnProjectBrowserDialogLoaded(object sender, RoutedEventArgs e)
 		{
-			Loaded -= OnLoaded;
-			if (!OpenProject.Projects.Any())
+			Loaded -= OnProjectBrowserDialogLoaded;
+			if (!OpenProject.Projects.Any() || GotoNewProjectTab)
 			{
-				OpenProjectButton.IsEnabled = false;
-				openProjectView.Visibility = Visibility.Hidden;
-				OnToggleButtonClick(NewProjectButton, new RoutedEventArgs());
-			}
-		}
-
-		private void OnToggleButtonClick(object sender, RoutedEventArgs e)
-		{
-			if (sender == OpenProjectButton)
-			{
-				if (NewProjectButton.IsChecked == true)
+				if (!GotoNewProjectTab)
 				{
-					NewProjectButton.IsChecked = false;
-
-					AnimateToOpenProject();
-					openProjectView.IsEnabled = true;
-					newProjectView.IsEnabled = false;
+					openProjectButton.IsEnabled = false;
+					openProjectView.Visibility = Visibility.Hidden;
 				}
-				OpenProjectButton.IsChecked = true;
-			}
-			else // new project button is clicked
-			{
-				if (OpenProjectButton.IsChecked == true)
-				{
-					OpenProjectButton.IsChecked = false;
 
-					AnimateToCreateProject();
-					openProjectView.IsEnabled = false;
-					newProjectView.IsEnabled = true;
-				}
-				NewProjectButton.IsChecked = true;
+				OnToggleButton_Click(createProjectButton, new RoutedEventArgs());
 			}
+
+			GotoNewProjectTab = false;
 		}
 
 		private void AnimateToCreateProject()
@@ -67,7 +46,7 @@ namespace SpoonEditor.GameProject
 			{
 				var animation = new ThicknessAnimation(new Thickness(0), new Thickness(-1600, 0, 0, 0), new Duration(TimeSpan.FromSeconds(0.5)));
 				animation.EasingFunction = _easing;
-				BrowserContent.BeginAnimation(MarginProperty, animation);
+				browserContent.BeginAnimation(MarginProperty, animation);
 			};
 			highlightRect.BeginAnimation(Canvas.LeftProperty, highlightAnimation);
 		}
@@ -80,9 +59,35 @@ namespace SpoonEditor.GameProject
 			{
 				var animation = new ThicknessAnimation(new Thickness(-1600, 0, 0, 0), new Thickness(0), new Duration(TimeSpan.FromSeconds(0.5)));
 				animation.EasingFunction = _easing;
-				BrowserContent.BeginAnimation(MarginProperty, animation);
+				browserContent.BeginAnimation(MarginProperty, animation);
 			};
 			highlightRect.BeginAnimation(Canvas.LeftProperty, highlightAnimation);
+		}
+
+		private void OnToggleButton_Click(object sender, RoutedEventArgs e)
+		{
+			if (sender == openProjectButton)
+			{
+				if (createProjectButton.IsChecked == true)
+				{
+					createProjectButton.IsChecked = false;
+					AnimateToOpenProject();
+					openProjectView.IsEnabled = true;
+					newProjectView.IsEnabled = false;
+				}
+				openProjectButton.IsChecked = true;
+			}
+			else
+			{
+				if (openProjectButton.IsChecked == true)
+				{
+					openProjectButton.IsChecked = false;
+					AnimateToCreateProject();
+					openProjectView.IsEnabled = false;
+					newProjectView.IsEnabled = true;
+				}
+				createProjectButton.IsChecked = true;
+			}
 		}
 	}
 }

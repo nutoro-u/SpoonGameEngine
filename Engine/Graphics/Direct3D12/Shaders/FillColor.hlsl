@@ -1,4 +1,4 @@
-#include "Fractals.hlsli"
+#include "Fractals.hlsl"
 
 struct ShaderConstants
 {

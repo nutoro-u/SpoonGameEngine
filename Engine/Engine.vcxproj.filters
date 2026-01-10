@@ -58,6 +58,6 @@
     <FxCompile Include="Graphics\Direct3D12\Shaders\PostProcess.hlsl" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Graphics\Direct3D12\Shaders\Fractals.hlsli" />
+    <None Include="Graphics\Direct3D12\Shaders\Fractals.hlsl" />
   </ItemGroup>
 </Project>

@@ -21,7 +21,6 @@ namespace spoon::platform {
 		window_info&
 			get_from_id(window_id id)
 		{
-			assert(id < windows.size());
 			assert(windows[id].hwnd);
 			return windows[id];
 		}

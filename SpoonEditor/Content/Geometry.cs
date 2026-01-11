@@ -1,4 +1,5 @@
 ﻿using SpoonEditor.DllWrappers;
+using SpoonEditor.GameProject;
 using SpoonEditor.Utilities;
 using System;
 using System.Collections.Generic;

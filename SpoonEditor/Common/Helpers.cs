@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
@@ -41,6 +42,18 @@ namespace SpoonEditor
 
 			return sb.ToString(0, length);
 		}
+
+		public static bool IsDirectory(string path)
+		{
+			try
+			{
+				return File.GetAttributes(path).HasFlag(FileAttributes.Directory);
+			}
+			catch (Exception ex) { Debug.WriteLine(ex.Message); }
+			return false;
+		}
+
+		public static bool IsOlder(this DateTime date, DateTime other) => date < other;
 
 		public static string SanitizeFileName(string name)
 		{

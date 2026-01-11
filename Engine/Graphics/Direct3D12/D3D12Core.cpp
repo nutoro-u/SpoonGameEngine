@@ -3,6 +3,7 @@
 #include "D3D12Shaders.h"
 #include "D3D12GPass.h"
 #include "D3D12PostProcess.h"
+#include "D3D12Upload.h"
 
 using namespace Microsoft::WRL;
 
@@ -59,6 +60,7 @@ namespace spoon::graphics::d3d12::core {
 
 				_fence_event = CreateEventEx(nullptr, nullptr, 0, EVENT_ALL_ACCESS);
 				assert(_fence_event);
+				if (!_fence_event) goto _error;
 
 				return;
 
@@ -126,9 +128,9 @@ namespace spoon::graphics::d3d12::core {
 				}
 			}
 
-			constexpr ID3D12CommandQueue *const command_queue() const { return _cmd_queue; }
-			constexpr id3d12_graphics_command_list *const command_list() const { return _cmd_list; }
-			constexpr u32 frame_index() const { return _frame_index; }
+			[[nodiscard]] constexpr ID3D12CommandQueue *const command_queue() const { return _cmd_queue; }
+			[[nodiscard]] constexpr id3d12_graphics_command_list *const command_list() const { return _cmd_list; }
+			[[nodiscard]] constexpr u32 frame_index() const { return _frame_index; }
 
 		private:
 			struct command_frame
@@ -290,6 +292,10 @@ namespace spoon::graphics::d3d12::core {
 			if (SUCCEEDED(D3D12GetDebugInterface(IID_PPV_ARGS(&debug_interface))))
 			{
 				debug_interface->EnableDebugLayer();
+#if 0
+#pragma message("WARNING: GPU_based validation is enabled. This will considerably slow down the renderer!")
+				debug_interface->SetEnableGPUBasedValidation(1);
+#endif
 			}
 			else
 			{
@@ -339,7 +345,9 @@ namespace spoon::graphics::d3d12::core {
 
 		// initialize modules
 		if (!(shaders::initialize() &&
-			gpass::initialize()))
+			gpass::initialize() &&
+			fx::initialize() &&
+			upload::initialize()))
 			return failed_init();
 
 		NAME_D3D12_OBJECT(main_device, L"Main D3D12 Device");
@@ -365,6 +373,8 @@ namespace spoon::graphics::d3d12::core {
 		}
 
 		// shutdown modules
+		upload::shutdown();
+		fx::shutdown();
 		gpass::shutdown();
 		shaders::shutdown();
 
@@ -491,10 +501,17 @@ namespace spoon::graphics::d3d12::core {
 		d3dx::d3d12_resource_barrier& barriers{ resource_barriers };
 
 		// Record commands
+		ID3D12DescriptorHeap *const heaps[]{ srv_desc_heap.heap() };
+		cmd_list->SetDescriptorHeaps(1, &heaps[0]);
+
 		cmd_list->RSSetViewports(1, &surface.viewport());
 		cmd_list->RSSetScissorRects(1, &surface.scissor_rect());
 
 		// Depth prepass
+		barriers.add(current_back_buffer,
+			D3D12_RESOURCE_STATE_PRESENT,
+			D3D12_RESOURCE_STATE_RENDER_TARGET,
+			D3D12_RESOURCE_BARRIER_FLAG_BEGIN_ONLY);
 		gpass::add_transitions_for_depth_prepass(barriers);
 		barriers.apply(cmd_list);
 		gpass::set_render_targets_for_depth_prepass(cmd_list);
@@ -506,21 +523,19 @@ namespace spoon::graphics::d3d12::core {
 		gpass::set_render_targets_for_gpass(cmd_list);
 		gpass::render(cmd_list, frame_info);
 
-		d3dx::transition_resource(cmd_list, current_back_buffer,
-			D3D12_RESOURCE_STATE_PRESENT,
-			D3D12_RESOURCE_STATE_RENDER_TARGET);
 		// Post-process
+		barriers.add(current_back_buffer,
+			D3D12_RESOURCE_STATE_PRESENT,
+			D3D12_RESOURCE_STATE_RENDER_TARGET,
+			D3D12_RESOURCE_BARRIER_FLAG_END_ONLY);
 		gpass::add_transitions_for_post_process(barriers);
 		barriers.apply(cmd_list);
 		// Will write to the current back buffer, so back buffer is a render target
-
+		fx::post_process(cmd_list, surface.rtv());
 		// after post process
 		d3dx::transition_resource(cmd_list, current_back_buffer,
 			D3D12_RESOURCE_STATE_RENDER_TARGET,
 			D3D12_RESOURCE_STATE_PRESENT);
-
-		// Presenting swap chain buffers happens in lockstep with frame buffers.
-		//surface.present();
 
 		// Done recording commands. Now execute commands,
 		// signal and increment the fence value for next frame.

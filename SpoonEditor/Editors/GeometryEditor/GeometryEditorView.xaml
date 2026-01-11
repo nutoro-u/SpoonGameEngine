@@ -5,13 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SpoonEditor.Editors"
              mc:Ignorable="d"
-			 d:DataContext="{d:DesignInstance Type=ed:GeometryEditor}"
+			 d:DataContext="{d:DesignInstance Type=local:GeometryEditor}"
              d:DesignHeight="450" d:DesignWidth="800">
 	<UserControl.Resources>
 		<Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource LightTextBlockStyle}"/>
 	</UserControl.Resources>
 	<UserControl.DataContext>
-		<ed:GeometryEditor/>
+		<local:GeometryEditor/>
 	</UserControl.DataContext>
 	<DockPanel Background="{StaticResource Editor.Window.GrayBrush2}">
 		<Border Background="{StaticResource Editor.Window.GrayBrush3}" Height="32" DockPanel.Dock="Top"
@@ -53,7 +53,7 @@
                           Background="{StaticResource Editor.Window.GrayBrush1}"
                           VerticalAlignment="Stretch"/>
 
-			<ed:GeometryView DataContext="{Binding MeshRenderer}" Grid.Column="1" x:Name="geometryView"/>
+			<local:GeometryView DataContext="{Binding MeshRenderer}" Grid.Column="1" x:Name="geometryView"/>
 			<StackPanel Grid.Column="1" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Left" IsHitTestVisible="False">
 				<StackPanel Orientation="Horizontal">
 					<TextBlock Text="{Binding MeshRenderer.CameraPosition.X, StringFormat=G5}" Foreground="{StaticResource Editor.RedBrush}"/>

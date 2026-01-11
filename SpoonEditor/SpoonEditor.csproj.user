@@ -11,6 +11,9 @@
     <Compile Update="Content\PrimitiveMeshDialog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Editors\GeometryEditor\GeometryDetailsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Editors\GeometryEditor\GeometryEditorView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

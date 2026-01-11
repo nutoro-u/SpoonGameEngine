@@ -1,4 +1,5 @@
 #include "Geometry.h"
+#include "..\Utilities\IOStream.h"
 
 namespace spoon::tools {
 	namespace {

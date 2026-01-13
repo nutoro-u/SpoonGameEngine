@@ -21,13 +21,13 @@ namespace spoon::graphics {
 			switch (platform)
 			{
 			case graphics_platform::direct3d12:
-				d3d12::get_platform_interface(gfx);
+				d3d12::get_platform_interface(pi);
 				break;
 			default:
 				return false;
 			}
 
-			assert(gfx.platform == platform);
+			assert(pi.platform == platform);
 			return true;
 		}
 #endif
@@ -294,4 +294,15 @@ namespace spoon::graphics {
 		gfx.resources.remove_submesh(id);
 	}
 
+	id::id_type
+		add_material(material_init_info info)
+	{
+		return gfx.resources.add_material(info);
+	}
+
+	void
+		remove_material(id::id_type id)
+	{
+		gfx.resources.remove_material(id);
+	}
 }

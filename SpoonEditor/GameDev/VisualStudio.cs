@@ -20,7 +20,7 @@ namespace SpoonEditor.GameDev
 	static class VisualStudio
 	{
 		private static readonly ManualResetEventSlim _resetEvent = new ManualResetEventSlim(false);
-		private static readonly string _progID = "VisualStudio.DTE.16.0";
+		private static readonly string _progID = "VisualStudio.DTE.17.0";
 		private static readonly object _lock = new object();
 		private static readonly string[] _buildConfigurationNames = new string[] { "Debug", "DebugEditor", "Release", "ReleaseEditor" };
 		private static EnvDTE80.DTE2 _vsInstance = null;
@@ -237,10 +237,10 @@ namespace SpoonEditor.GameDev
 
 			CallOnSTAThread(() =>
 			{
+				_vsInstance.MainWindow.Visible = showWindow;
 				if (!_vsInstance.Solution.IsOpen)
 					_vsInstance.Solution.Open(project.Solution);
 
-				_vsInstance.MainWindow.Visible = showWindow;
 				_vsInstance.Events.BuildEvents.OnBuildProjConfigBegin += OnBuildSolutionBegin;
 				_vsInstance.Events.BuildEvents.OnBuildProjConfigDone += OnBuildSolutionDone;
 			});

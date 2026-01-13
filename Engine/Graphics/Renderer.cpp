@@ -14,8 +14,9 @@ namespace spoon::graphics {
 
 		platform_interface gfx{};
 
+#ifndef SPOON_PLUS
 		bool
-			set_platform_interface(graphics_platform platform)
+			set_platform_interface(graphics_platform platform, platform_interface& pi)
 		{
 			switch (platform)
 			{
@@ -29,13 +30,17 @@ namespace spoon::graphics {
 			assert(gfx.platform == platform);
 			return true;
 		}
-
+#endif
 	} // anonymous namespace
+
+#ifdef SPOON_PLUS
+	extern bool set_platform_interface(graphics_platform platform, platform_interface& pi);
+#endif
 
 	bool
 		initialize(graphics_platform platform)
 	{
-		return set_platform_interface(platform) && gfx.initialize();
+		return set_platform_interface(platform, gfx) && gfx.initialize();
 	}
 
 	void

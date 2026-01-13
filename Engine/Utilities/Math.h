@@ -1,5 +1,4 @@
 #pragma once
-#pragma once
 
 #include "CommonHeaders.h"
 #include "MathTypes.h"
@@ -17,7 +16,7 @@ namespace spoon::math {
 	{
 		static_assert(bits <= sizeof(u32) * 8);
 		assert(f >= 0.f && f <= 1.f);
-		constexpr f32 intervals{ (f32)((1ui32 << bits) - 1) };
+		constexpr f32 intervals{ (f32)(((u32)1 << bits) - 1) };
 		return (u32)(intervals * f + 0.5f);
 	}
 
@@ -25,8 +24,8 @@ namespace spoon::math {
 	constexpr f32 unpack_to_unit_float(u32 i)
 	{
 		static_assert(bits <= sizeof(u32) * 8);
-		assert(i < (1ui32 << bits));
-		constexpr f32 intervals{ (f32)((1ui32 << bits) - 1) };
+		assert(i < ((u32)1 << bits));
+		constexpr f32 intervals{ (f32)(((u32)1 << bits) - 1) };
 		return (f32)i / intervals;
 	}
 
@@ -56,7 +55,7 @@ namespace spoon::math {
 		return ((size + mask) & ~mask);
 	}
 
-	// Align by rounding down. Will result in a multiple of 'alignment' that is greater than or equal to 'size'.
+	// Align by rounding down. Will result in a multiple of 'alignment' that is less than or equal to 'size'.
 	template<u64 alignment>
 	constexpr u64 align_size_down(u64 size)
 	{

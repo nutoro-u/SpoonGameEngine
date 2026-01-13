@@ -25,8 +25,8 @@ namespace spoon::graphics {
 
 	struct render_surface
 	{
-		platform::window window{};
-		surface surface{};
+		platform::window            window{};
+		spoon::graphics::surface   surface{};
 	};
 
 	struct camera_parameter {
@@ -88,7 +88,7 @@ namespace spoon::graphics {
 		{
 			assert(id::is_valid(id));
 			entity_id = id;
-			type = camera::perspective;
+			type = camera::orthographic;
 			up = { 0.f, 1.f, 0.f };
 			view_width = 1920;
 			view_height = 1080;
@@ -97,10 +97,26 @@ namespace spoon::graphics {
 		}
 	};
 
+	struct primitve_topology {
+		enum type : u32 {
+			point_list = 1,
+			line_list,
+			line_strip,
+			triangle_list,
+			triangle_strip,
+
+			count
+		};
+	};
+
+#ifndef SPOON_PLUS
 	enum class graphics_platform :u32
 	{
 		direct3d12 = 0,
 	};
+#else
+#include "Graphics/GraphicsPlatform.h"
+#endif
 
 	bool initialize(graphics_platform platform);
 	void shutdown();

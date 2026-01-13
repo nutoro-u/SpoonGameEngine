@@ -4,6 +4,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="TestRenderer.cpp" />
     <ClCompile Include="ShaderCompilation.cpp" />
+    <ClCompile Include="RenderItem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test.h" />
@@ -11,5 +12,8 @@
     <ClInclude Include="TestWindow.h" />
     <ClInclude Include="TestRenderer.h" />
     <ClInclude Include="ShaderCompilation.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="TestShader.hlsl" />
   </ItemGroup>
 </Project>

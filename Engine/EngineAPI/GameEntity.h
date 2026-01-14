@@ -3,8 +3,6 @@
 #include "../Components/ComponentsCommon.h"
 #include "TransfromComponent.h"
 #include "ScriptComponent.h"
-#include <string>
-#include <functional>
 
 namespace spoon {
 	namespace game_entity {
@@ -15,11 +13,16 @@ namespace spoon {
 		public:
 			constexpr explicit entity(entity_id id) : _id{ id } {}
 			constexpr entity() : _id{ id::invalid_id } {}
-			constexpr entity_id get_id() const { return _id; }
-			constexpr bool is_valid() const { return id::is_valid(_id); }
+			[[nodiscard]] constexpr entity_id get_id() const { return _id; }
+			[[nodiscard]] constexpr bool is_valid() const { return id::is_valid(_id); }
 
-			transform::component transform() const;
-			script::component script() const;
+			[[nodiscard]] transform::component transform() const;
+			[[nodiscard]] script::component script() const;
+
+			[[nodiscard]] math::v4 rotation() const { return transform().rotation(); }
+			[[nodiscard]] math::v3 orientation() const { return transform().orientation(); }
+			[[nodiscard]] math::v3 position() const { return transform().position(); }
+			[[nodiscard]] math::v3 scale() const { return transform().scale(); }
 		private:
 			entity_id _id;
 		};
@@ -36,6 +39,16 @@ namespace spoon {
 		protected:
 			constexpr explicit entity_script(game_entity::entity entity)
 				: game_entity::entity{ entity.get_id() } {}
+
+			void set_rotation(math::v4 rotation_quaternion) const { set_rotation(this, rotation_quaternion); }
+			void set_orientation(math::v3 orientation_vector) const { set_orientation(this, orientation_vector); }
+			void set_position(math::v3 position) const { set_position(this, position); }
+			void set_scale(math::v3 scale) const { set_scale(this, scale); }
+
+			static void set_rotation(const game_entity::entity *const entity, math::v4 rotation_quaternion);
+			static void set_orientation(const game_entity::entity *const entity, math::v3 orientation_vector);
+			static void set_position(const game_entity::entity *const entity, math::v3 position);
+			static void set_scale(const game_entity::entity *const entity, math::v3 scale);
 		};
 
 		namespace detail {
@@ -62,20 +75,20 @@ namespace spoon {
 #define REGISTER_SCRIPT(TYPE)                                           \
         namespace {                                                     \
         const u8 _reg_##TYPE                                            \
-        { spoon::script::detail::register_script(                       \
-              spoon::script::detail::string_hash()(#TYPE),              \
-              &spoon::script::detail::create_script<TYPE>) };           \
+        { spoon::script::detail::register_script(                      \
+              spoon::script::detail::string_hash()(#TYPE),             \
+              &spoon::script::detail::create_script<TYPE>) };          \
         const u8 _name_##TYPE                                           \
-        { spoon::script::detail::add_script_name(#TYPE) };              \
+        { spoon::script::detail::add_script_name(#TYPE) };             \
         }                                                               
 
 #else
 #define REGISTER_SCRIPT(TYPE)                                           \
         namespace {                                                     \
         const u8 _reg_##TYPE                                            \
-        { spoon::script::detail::register_script(                       \
-              spoon::script::detail::string_hash()(#TYPE),              \
-              &spoon::script::detail::create_script<TYPE>) };           \
+        { spoon::script::detail::register_script(                      \
+              spoon::script::detail::string_hash()(#TYPE),             \
+              &spoon::script::detail::create_script<TYPE>) };          \
         }
 
 #endif // USE_WITH_EDITOR

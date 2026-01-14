@@ -483,7 +483,7 @@ namespace SpoonEditor.Content
 				}
 
 				// For Testing. Remove later!
-				// PackForEngine();
+				PackForEngine();
 				// For Testing. Remove later!
 
 			}

@@ -16,4 +16,7 @@
   <ItemGroup>
     <FxCompile Include="TestShader.hlsl" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="model.model" />
+  </ItemGroup>
 </Project>

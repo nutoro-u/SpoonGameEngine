@@ -140,6 +140,7 @@ namespace spoon::input {
 
 			key_numlock,
 			key_scrollock,
+			key_tilde,
 		};
 	};
 
@@ -147,7 +148,7 @@ namespace spoon::input {
 		enum type : u32 {
 			keyboard,
 			mouse,
-			controler,
+			controller,
 			raw,
 
 			count

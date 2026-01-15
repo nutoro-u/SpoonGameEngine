@@ -203,7 +203,7 @@ namespace spoon::graphics {
 	}
 
 	f32
-		light::ubmra() const
+		light::umbra() const
 	{
 		assert(is_valid());
 		f32 umbra;
@@ -212,7 +212,7 @@ namespace spoon::graphics {
 	}
 
 	f32
-		light::penubmra() const
+		light::penumbra() const
 	{
 		assert(is_valid());
 		f32 penumbra;

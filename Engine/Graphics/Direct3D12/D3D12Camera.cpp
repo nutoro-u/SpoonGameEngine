@@ -182,7 +182,7 @@ namespace spoon::graphics::d3d12::camera {
 			*entity_id = camera.entity_id();
 		}
 
-		void
+		constexpr void
 			dummy_set(d3d12_camera&, const void *const, u32)
 		{
 		}

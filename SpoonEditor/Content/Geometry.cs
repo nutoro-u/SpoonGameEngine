@@ -213,7 +213,7 @@ namespace SpoonEditor.Content
 			get => _smootingAngle;
 			set
 			{
-				if (_smootingAngle != value)
+				if (!_smootingAngle.IsTheSameAs(value))
 				{
 					_smootingAngle = value;
 					OnPropertyChanged(nameof(SmootingAngle));
@@ -617,7 +617,7 @@ namespace SpoonEditor.Content
 			Debug.Assert(data?.Length > 0);
 
 			// For Testing. Remove later!
-			using (var fs = new FileStream(@"..\..\EngineTest\model.model", FileMode.Create))
+			using (var fs = new FileStream(@"..\..\x64\model.model", FileMode.Create))
 			{
 				fs.Write(data, 0, data.Length);
 			}
